@@ -1,0 +1,77 @@
+---
+/**
+ * Footer component for GHAutotech.
+ * Refactored for mobile-first responsiveness and fluid scaling.
+ * Avoids absolute values where possible.
+ */
+const curYear = new Date().getFullYear();
+---
+
+<footer class="w-full mt-auto">
+  <!-- Red Section: Main Info -->
+  <div class="bg-[#e8003e] text-white py-12 lg:py-16">
+    <div class="site-container flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16 xl:gap-20 uppercase text-center lg:text-left">
+      
+      <!-- Schedule Group -->
+      <div class="flex flex-col md:flex-row gap-10 lg:gap-12 xl:gap-16">
+        <!-- Mon-Thu -->
+        <div class="flex flex-col gap-3">
+          <h4 class="text-lg lg:text-[20px] font-black tracking-[0.15em]">LUNES - JUEVES</h4>
+          <p class="text-xl lg:text-[22px] font-semibold leading-tight">
+            9:00H - 13:00H<br />
+            15:00H - 19:00H
+          </p>
+        </div>
+        <!-- Fri -->
+        <div class="flex flex-col gap-3">
+          <h4 class="text-lg lg:text-[20px] font-black tracking-[0.15em]">VIERNES</h4>
+          <p class="text-xl lg:text-[22px] font-semibold leading-tight">
+            8:00H - 14:00H
+          </p>
+        </div>
+      </div>
+
+      <!-- Divider 1 -->
+      <img src="/assets/separator.svg" alt="" class="hidden lg:block h-[76px] w-auto opacity-40 shrink-0" />
+
+      <!-- Location -->
+      <div class="flex flex-col gap-1">
+        <p class="text-lg lg:text-[20px] tracking-tight">
+          <span class="font-bold">AV. de la Generalitat, 43F</span><br />
+          <span class="opacity-90">43480 Vila-Seca (Tarragona) España</span>
+        </p>
+      </div>
+
+      <!-- Divider 2 -->
+      <img src="/assets/separator.svg" alt="" class="hidden lg:block h-[76px] w-auto opacity-40 shrink-0" />
+
+      <!-- Contact Info -->
+      <div class="flex flex-col gap-2">
+        <a 
+          href="mailto:administracion@ghautotech.com" 
+          class="text-lg lg:text-[20px] font-semibold hover:underline transition-all underline-offset-4"
+        >
+          administracion@ghautotech.com
+        </a>
+        <p class="text-2xl lg:text-[25px] font-bold tracking-tight">+34 630 473 852</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Black Section: Legal & Copyright -->
+  <div class="bg-black text-white/50 py-8 lg:py-10">
+    <div class="site-container flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-4">
+      <!-- Copyright -->
+      <p class="text-[11px] lg:text-[12px] font-medium tracking-normal text-center lg:text-left max-w-[450px] leading-relaxed">
+        © {curYear} GHAutotech – Taller mecánico profesional en Vila-seca, Tarragona. <br class="hidden md:block" /> Todos los derechos reservados.
+      </p>
+      
+      <!-- Legal Links -->
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[11px] lg:text-[12px] font-semibold tracking-tight text-white/70">
+        <a href="/legal" class="hover:text-[#e8003e] transition-colors">Aviso legal</a>
+        <a href="/privacidad" class="hover:text-[#e8003e] transition-colors">Política de privacidad</a>
+        <a href="/cookies" class="hover:text-[#e8003e] transition-colors">Política de cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>

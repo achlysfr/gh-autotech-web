@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout
+  title="Inicio"
+  description="GHAutotech – Taller mecánico profesional en Vila-seca, Tarragona. Te guiamos para tomar decisiones seguras sobre tu vehículo."
+>
+  <Header />
+
+  <main class="flex-grow">
+    <Hero />
+
+    <!-- DESCRIPTION SECTION -->
+    <section class="bg-white py-16 md:py-24 lg:py-32">
+      <div class="site-container flex flex-col lg:flex-row justify-center gap-12 lg:gap-20">
+        <div class="max-w-[633px] lg:text-right">
+          <h2 class="text-[clamp(32px,5vw,65px)] leading-[1.0] tracking-tight text-black font-normal">
+            En <span class="font-bold text-[#e8003e]">GHAutotech</span>, ofrecemos servicios de <span class="font-bold">reparación</span> y <span class="font-bold">mantenimiento</span> de vehículos con un enfoque profesional, rápido y eficaz.
+          </h2>
+        </div>
+
+        <div class="max-w-[596px] text-base lg:text-[22px] leading-relaxed text-black space-y-6 lg:pt-4">
+          <p>
+            Nuestro <span class="font-bold">equipo altamente cualificado</span> ofrece soluciones de máxima calidad para tu vehículo, desde revisiones técnicas y mantenimiento preventivo hasta reparaciones complejas, siempre con un asesoramiento cercano y personalizado para cada cliente en Vila-seca y alrededores.
+          </p>
+          <p>
+            Somos especialistas en <span class="font-bold">mecánica, electricidad y electrónica del automóvil</span>. Nuestro nuevo taller está equipado con herramientas de última generación y tecnología avanzada que nos permiten garantizar intervenciones precisas, eficientes y adaptadas a los estándares más exigentes del sector.
+          </p>
+          <p>
+            Nuestro compromiso es brindarte <span class="font-bold">seguridad, confianza y transparencia</span> en cada servicio, para que conduzcas con total tranquilidad.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-16 lg:mt-24 text-center site-container">
+        <p class="text-lg lg:text-[22px] max-w-[1135px] mx-auto mb-10">
+          <span class="font-bold">¿Buscas un taller mecánico con experiencia, atención cercana y resultados que cumplen tus expectativas?</span> Estás en el lugar correcto.
+        </p>
+        <a
+          href="/horario-contacto"
+          class="inline-flex items-center justify-center bg-[#e8003e] px-8 py-4 lg:px-10 lg:py-6 text-base lg:text-xl font-black uppercase tracking-widest text-white hover:bg-black transition-all duration-300"
+        >
+          CONSULTA NUESTROS HORARIOS
+        </a>
+      </div>
+    </section>
+
+    <!-- SERVICE CARDS -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 w-full">
+      <!-- Card 1 -->
+      <div class="bg-black min-h-[300px] lg:h-[328px] p-8 lg:p-10 flex flex-col justify-between group cursor-pointer border-b md:border-b-0 md:border-r border-white/5">
+        <h3 class="text-2xl lg:text-[30px] font-black leading-[1.1] text-white uppercase max-w-[240px]">
+          Taller mecánico profesional
+        </h3>
+        <div class="self-end mt-4">
+          <img src="/assets/icon-car.svg" alt="" class="w-[clamp(60px,8vw,95.5px)] h-auto max-h-[72.875px] opacity-80 group-hover:opacity-100 transition-opacity object-contain" />
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-[#2d2d2d] min-h-[300px] lg:h-[328px] p-8 lg:p-10 flex flex-col justify-between group cursor-pointer border-b md:border-b-0 md:border-r border-white/5">
+        <h3 class="text-2xl lg:text-[30px] font-black leading-[1.1] text-white uppercase max-w-[300px]">
+          Reparación y mantenimiento de vehículos
+        </h3>
+        <div class="self-end mt-4">
+          <img src="/assets/icon-wrench.svg" alt="" class="w-[clamp(60px,8vw,95.5px)] h-auto max-h-[72.875px] opacity-80 group-hover:opacity-100 transition-opacity object-contain" />
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-[#484848] min-h-[300px] lg:h-[328px] p-8 lg:p-10 flex flex-col justify-between group cursor-pointer border-b md:border-b-0 md:border-r border-white/5">
+        <h3 class="text-2xl lg:text-[30px] font-black leading-[1.1] text-white uppercase max-w-[240px]">
+          Diagnóstico técnico avanzado
+        </h3>
+        <div class="self-end mt-4">
+          <img src="/assets/icon-document.svg" alt="" class="w-[clamp(60px,8vw,95.5px)] h-auto max-h-[72.875px] opacity-80 group-hover:opacity-100 transition-opacity object-contain" />
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="bg-[#696969] min-h-[300px] lg:h-[328px] p-8 lg:p-10 flex flex-col justify-between group cursor-pointer">
+        <h3 class="text-2xl lg:text-[30px] font-black leading-[1.1] text-white uppercase max-w-[240px]">
+          Asesoramiento personalizado
+        </h3>
+        <div class="self-end mt-4">
+          <img src="/assets/icon-person.svg" alt="" class="w-[clamp(60px,8vw,95.5px)] h-auto max-h-[72.875px] opacity-80 group-hover:opacity-100 transition-opacity object-contain" />
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM & MAP -->
+    <ContactForm />
+  </main>
+
+  <Footer />
+</Layout>

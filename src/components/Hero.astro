@@ -1,0 +1,79 @@
+---
+/**
+ * Hero component for GHAutotech.
+ * Refined for robustness:
+ * - Accounts for fixed header height.
+ * - Improved responsive scaling to prevent content disappearance.
+ */
+---
+
+<section
+  class="relative min-h-[700px] lg:h-screen max-h-[1080px] bg-black overflow-hidden flex items-center pt-[72px] md:pt-[114px]"
+>
+  <!-- Background Video / Mask -->
+  <div
+    class="absolute inset-y-0 right-0 w-full lg:w-[60%] z-0 h-full overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 z-10 bg-gradient-to-r from-black via-black/40 to-transparent lg:via-transparent"
+    >
+    </div>
+
+    <div
+      class="absolute inset-0 z-0 h-full w-full opacity-60 lg:opacity-100"
+      style="
+        mask-image: url('/assets/mask-hero.svg');
+        mask-size: cover;
+        mask-repeat: no-repeat;
+        -webkit-mask-image: url('/assets/mask-hero.svg');
+        -webkit-mask-size: cover;
+        -webkit-mask-repeat: no-repeat;
+      "
+    >
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="w-full h-full object-cover"
+        poster="/assets/hero-bg.jpg"
+      >
+        <source
+          src="/assets/videos/AdobeStock_449143556.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div
+    class="relative z-20 w-full px-6 lg:px-0"
+    style="padding-left: clamp(24px, 12vw, 310px);"
+  >
+    <div class="max-w-full lg:max-w-[45%] flex flex-col gap-8 md:gap-12 lg:gap-16">
+      <h1
+        class="text-[clamp(36px,8vw,100px)] font-bold leading-[1.0] tracking-[-0.03em] lg:tracking-[-0.06em] uppercase text-white"
+      >
+        TU <span class="text-[#e8003e]">TALLER MECÁNICO</span> PROFESIONAL<br />
+        EN <span class="text-white">VILA-SECA</span>
+      </h1>
+
+      <p
+        class="text-[clamp(18px,3vw,30px)] font-bold leading-[1.2] text-white tracking-tight"
+      >
+        AV. de la Generalitat, 43F<br />
+        43480 Vila-Seca (Tarragona) España
+      </p>
+
+      <div class="flex mt-2">
+        <a
+          href="/horario-contacto"
+          class="inline-flex justify-center items-center w-fit whitespace-nowrap px-8 py-4 md:px-10 md:py-5 lg:px-12 lg:py-6 bg-white text-base md:text-lg lg:text-xl font-black uppercase tracking-widest text-black hover:bg-[#e8003e] hover:text-white transition-all duration-300 leading-none"
+        >
+          CONTÁCTANOS
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

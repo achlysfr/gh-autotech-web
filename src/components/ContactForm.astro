@@ -1,0 +1,110 @@
+---
+/**
+ * ContactForm component for GHAutotech.
+ * Final refinement for 1:1 design fidelity:
+ * - Title: 62px, 400/700 weight, normal-case (FORCED), leading 1.05.
+ * - Spacing: Compact vertical margins between header and form.
+ * - Map: 620px width, better vertical alignment.
+ * - Connector Line: Corrected position based on comparison images.
+ */
+---
+
+<section id="contacto" class="bg-white py-16 md:py-24 lg:py-32 overflow-hidden">
+  <div class="site-container">
+    <!-- Grid adjusted for Figma proportions -->
+    <div class="lg:pl-[10.4%] grid grid-cols-1 lg:grid-cols-[1fr_620px] gap-12 lg:gap-20 items-start">
+      
+      <!-- Left Column: Title, Intro and Form -->
+      <div class="flex flex-col">
+        <h2
+          class="text-[clamp(32px,5vw,62px)] font-normal normal-case lg:!normal-case leading-[1.05] tracking-[-0.03em] text-black mb-4 max-w-full lg:max-w-[620px]"
+        >
+          ¿Necesitas revisar tu vehículo o solicitar <span class="font-bold">información</span> sobre nuestros servicios?
+        </h2>
+        
+        <p
+          class="text-base lg:text-[18px] leading-relaxed text-black mb-8 max-w-[550px] tracking-tight opacity-90"
+        >
+          En GHAutotech estamos aquí para ayudarte. Nuestro equipo estará
+          encantado de asesorarte y ofrecerte la mejor solución para tu vehículo.
+        </p>
+
+        <form class="space-y-5 w-full max-w-[622px]">
+          <div class="flex flex-col">
+            <label for="form-name" class="text-sm lg:text-[16px] font-normal mb-1 opacity-70 uppercase tracking-wider">Nombre</label>
+            <input
+              id="form-name"
+              type="text"
+              required
+              class="w-full h-[45px] border border-[#e8003e] bg-transparent px-4 focus:ring-1 focus:ring-[#e8003e] outline-none transition-shadow"
+            />
+          </div>
+          
+          <div class="flex flex-col">
+            <label for="form-phone" class="text-sm lg:text-[16px] font-normal mb-1 opacity-70 uppercase tracking-wider">Teléfono</label>
+            <input
+              id="form-phone"
+              type="tel"
+              required
+              class="w-full h-[45px] border border-[#e8003e] bg-transparent px-4 focus:ring-1 focus:ring-[#e8003e] outline-none transition-shadow"
+            />
+          </div>
+
+          <div class="flex flex-col">
+            <label for="form-message" class="text-sm lg:text-[16px] font-normal mb-1 opacity-70 uppercase tracking-wider">Mensaje</label>
+            <textarea
+              id="form-message"
+              required
+              class="w-full h-[160px] border border-[#e8003e] bg-transparent px-4 py-3 focus:ring-1 focus:ring-[#e8003e] outline-none resize-none transition-shadow"
+            ></textarea>
+          </div>
+
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-2">
+            <div class="flex items-start gap-3 max-w-[340px]">
+              <input
+                type="checkbox"
+                id="privacy-form"
+                required
+                class="mt-1 size-4 accent-[#e8003e] shrink-0 cursor-pointer"
+              />
+              <label
+                for="privacy-form"
+                class="text-[12px] leading-snug text-black/80 cursor-pointer"
+              >
+                Entiendo que los datos solicitados no se almacenan y solo se
+                utilizan para enviar el mensaje al responsable de la web.
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              class="bg-black px-10 py-4 text-base lg:text-lg font-black uppercase tracking-[0.2em] text-white hover:bg-[#e8003e] transition-colors duration-300 whitespace-nowrap"
+            >
+              enviar mensaje
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Column: Map - Explicit Figma scale -->
+      <div class="relative flex flex-col items-center lg:items-start pt-10 lg:pt-8">
+        <div class="relative w-full lg:w-[620px] aspect-[620/641]">
+          <!-- Catalonia Map Image -->
+          <img
+            src="/assets/map-catalonia.svg"
+            alt="Mapa de Cataluña indicando ubicación de GHAutotech en Vila-Seca"
+            class="w-full h-auto"
+          />
+          
+          <!-- Red Connector Line -->
+          <!-- Positioned to exit exactly from the bottom tip of the red region and reach the address base -->
+          <img
+            src="/assets/line.svg"
+            alt=""
+            class="absolute left-[32.6%] bottom-[4.5%] h-[27%] w-auto hidden lg:block pointer-events-none"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

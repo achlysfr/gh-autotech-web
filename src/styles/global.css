@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-primary: #e8003e;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-dark: #1a1a1a;
+  --color-gray-mid: #2d2d2d;
+  --color-gray-light: #484848;
+  --color-gray-soft: #696969;
+  
+  --font-main: 'Public Sans', system-ui, -apple-system, sans-serif;
+
+  /* Layout */
+  --site-max-width: 2400px;
+  --site-gutter: clamp(16px, 4vw, 60px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-container {
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin-inline: auto;
+  padding-inline: var(--site-gutter);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+  text-transform: uppercase;
+}

@@ -1,0 +1,59 @@
+---
+// src/components/AboutUs.astro
+---
+
+<section id="sobre-nosotros" class="py-[120px] bg-white">
+  <div class="max-w-[1920px] mx-auto px-8">
+    <div class="flex flex-col lg:flex-row gap-20">
+      <!-- Text Side -->
+      <div class="lg:w-1/2 space-y-12">
+        <h2 class="text-[40px] md:text-[60px] font-black leading-[1.1] uppercase">
+          Compromiso con la<br />
+          <span class="text-[#e8003e]">Excelencia</span> y la Seguridad<br />
+          de tu Vehículo
+        </h2>
+        
+        <div class="space-y-6 text-[20px] leading-relaxed text-gray-500">
+          <p>
+            En GHAutotech, entendemos que tu vehículo es más que un medio de transporte; es una parte esencial de tu vida diaria. Por eso, nos dedicamos a ofrecer soluciones mecánicas de la más alta calidad, combinando experiencia técnica con un trato cercano y transparente.
+          </p>
+          <p>
+            Nuestro taller en Vila-seca cuenta con tecnología de vanguardia para realizar diagnósticos precisos y reparaciones eficientes. Nos enorgullece ser un referente de confianza para nuestros clientes, guiándoles en cada decisión para garantizar su seguridad en la carretera.
+          </p>
+        </div>
+
+        <div class="pt-8">
+          <div class="flex items-center gap-6">
+            <div class="w-[80px] h-[80px] rounded-full overflow-hidden border-4 border-[#e8003e]">
+              <img src="/assets/owner.jpg" alt="Gerente GHAutotech" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <p class="text-[22px] font-black uppercase">Gerente General</p>
+              <p class="text-[18px] text-[#e8003e] font-bold">GHAutotech Vila-seca</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Grid Side -->
+      <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+        <div class="space-y-4">
+          <div class="h-[300px] overflow-hidden">
+            <img src="/assets/about-1.jpg" alt="Taller" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+          </div>
+          <div class="h-[400px] overflow-hidden">
+            <img src="/assets/about-2.jpg" alt="Mecánico trabajando" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+          </div>
+        </div>
+        <div class="space-y-4 pt-12">
+          <div class="h-[400px] overflow-hidden">
+            <img src="/assets/about-3.jpg" alt="Herramientas" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+          </div>
+          <div class="h-[300px] overflow-hidden">
+            <img src="/assets/about-4.jpg" alt="Coche en elevador" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

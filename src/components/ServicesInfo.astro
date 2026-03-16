@@ -1,0 +1,68 @@
+---
+// src/components/ServicesInfo.astro
+const services = [
+  {
+    title: 'Mantenimiento integral de vehículos',
+    description: 'Servicios preventivos y revisiones completas para tu coche.',
+    icon: 'fa-oil-can'
+  },
+  {
+    title: 'Diagnóstico y reparación mecánica',
+    description: 'Solución de averías y fallos técnicos con precisión.',
+    icon: 'fa-gears'
+  },
+  {
+    title: 'Reparación electrónica y sistemas modernos',
+    description: 'De sensores a sistemas integrados de última generación.',
+    icon: 'fa-microchip'
+  },
+  {
+    title: 'Asesoramiento técnico profesional',
+    description: 'Te guiamos para tomar decisiones seguras sobre tu vehículo.',
+    icon: 'fa-user-shield'
+  },
+  {
+    title: 'Revisión pre-ITV y ajuste técnico',
+    description: 'Prepara tu coche con confianza antes de la inspección oficial.',
+    icon: 'fa-clipboard-check'
+  },
+  {
+    title: 'Reparación y mejora de componentes',
+    description: 'Desde frenos hasta sistemas eléctricos, todo lo que necesites.',
+    icon: 'fa-tools'
+  }
+];
+---
+
+<section id="servicios" class="py-[120px] bg-white">
+  <div class="max-w-[1920px] mx-auto px-8">
+    <div class="flex flex-col lg:flex-row gap-20 mb-20">
+      <div class="lg:w-1/2 space-y-6">
+        <h2 class="text-[40px] md:text-[60px] font-black leading-[1.1] uppercase">
+          Servicios de Taller<br />
+          Mecánico y Mantenimiento<br />
+          de Vehículos
+        </h2>
+      </div>
+      <div class="lg:w-1/2">
+        <p class="text-[20px] leading-relaxed text-gray-500">
+          Ofrecemos una gama completa de servicios automotrices profesionales para cubrir todas las necesidades de mantenimiento y reparación de tu coche. Nuestro equipo experto se encarga de cada detalle para garantizar el mejor rendimiento, seguridad y durabilidad de tu vehículo.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
+      {services.map(service => (
+        <div class="group space-y-6">
+          <div class="w-[82px] h-[82px] bg-black text-white flex items-center justify-center text-[32px] group-hover:bg-[#e8003e] transition-colors duration-300">
+            <i class={`fas ${service.icon}`}></i>
+          </div>
+          <div class="space-y-4">
+            <h4 class="text-[28px] font-black uppercase leading-tight">{service.title}</h4>
+            <p class="text-[18px] text-gray-500 leading-relaxed">{service.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,109 @@
+---
+// src/components/Header.astro
+const navItems = [
+  {
+    name: "INICIO",
+    href: "/",
+    active: true,
+  },
+  {
+    name: "Sobre nosotros",
+    href: "/sobre-nosotros",
+    active: false,
+  },
+  {
+    name: "SERVICIOS",
+    href: "/servicios",
+    active: false,
+  },
+  {
+    name: "HORARIO Y CONTACTO",
+    href: "/horario-contacto",
+    active: false,
+  },
+];
+
+const socialIcons = [
+  { src: "/assets/rrss-ig.svg", href: "#" },
+  { src: "/assets/rrss-fb.svg", href: "#" },
+  { src: "/assets/rrss-lk.svg", href: "#" },
+  { src: "/assets/rrss-x.svg", href: "#" },
+  { src: "/assets/rrss-extra.svg", href: "#" },
+];
+---
+
+<!-- Header height adjusted to match logo scale + visual balance -->
+<header
+  class="fixed inset-x-0 top-0 z-50 bg-black text-white h-[72px] md:h-[114px] flex items-center"
+>
+  <div class="site-container flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex-shrink-0 flex items-center">
+      <a href="/" class="flex items-center group">
+        <img
+          src="/assets/logo-ghautotech.svg"
+          alt="GHAutotech"
+          class="h-[44px] md:h-[70.328px] md:w-[248px] w-auto object-contain"
+        />
+      </a>
+    </div>
+
+    <!-- Main Navigation & Social Icons (Desktop) -->
+    <div class="hidden md:flex items-center gap-8 lg:gap-[74px]">
+      <nav class="flex items-center gap-6 lg:gap-8">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class={`h-[29px] flex items-center shrink-0 whitespace-nowrap text-[20px] lg:text-[22px] font-extrabold uppercase tracking-[-1.32px] transition-colors duration-200 ${
+                item.active
+                  ? "text-[#e8003e]"
+                  : "text-white hover:text-[#e8003e]"
+              }`}
+            >
+              {item.name}
+            </a>
+          ))
+        }
+      </nav>
+
+      <!-- Iconos RRSS -->
+      <div class="flex items-center gap-[13px]">
+        {
+          socialIcons.map((icon) => (
+            <a
+              href={icon.href}
+              target="_blank"
+              rel="noreferrer"
+              class="shrink-0 hover:opacity-80 transition-opacity"
+            >
+              <img src={icon.src} alt="" class="w-[28px] h-[28px]" />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Mobile menu button -->
+    <div class="md:hidden flex items-center">
+      <button
+        type="button"
+        class="text-white hover:text-[#e8003e] focus:outline-none p-2"
+        aria-label="Abrir menú"
+      >
+        <svg
+          class="h-8 w-8"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>

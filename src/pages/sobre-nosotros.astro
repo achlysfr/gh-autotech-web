@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Sobre Nosotros">
+  <Header />
+
+  <main class="flex-grow pt-24">
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-sm font-bold text-red-600 tracking-widest uppercase mb-3">Sobre Nosotros</h2>
+            <h3 class="text-4xl font-extrabold text-gray-900 mb-6">Tu Taller de Confianza</h3>
+            <p class="text-lg text-gray-500 mb-6 leading-relaxed">
+              En GHAutotech, nuestra misión va más allá de reparar coches. Nos enfocamos en construir una relación de confianza con cada cliente, garantizando la máxima transparencia en cada diagnóstico.
+            </p>
+            <p class="text-lg text-gray-500 leading-relaxed">
+              Trabajamos con todas las marcas y utilizamos tecnología de última generación para asegurar que tu vehículo recibe el mejor trato posible en Vila-seca.
+            </p>
+          </div>
+          <div class="relative">
+            <div class="aspect-square bg-gray-100 rounded-3xl overflow-hidden flex items-center justify-center relative z-10">
+              <img
+                src="/assets/images/sobre-nosotros.jpg"
+                alt="Taller mecánico GHAutotech en Vila-seca"
+                class="w-full h-full object-cover"
+                onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');"
+                onload="this.nextElementSibling.classList.add('hidden');"
+              />
+              <span class="text-gray-400 font-medium absolute inset-0 hidden flex items-center justify-center bg-gray-100">
+                Imagen del Taller
+              </span>
+            </div>
+            <div class="absolute -bottom-6 -left-6 w-full h-full border-2 border-red-600 rounded-3xl -z-10"></div>
+            <div class="absolute -top-6 -right-6 w-32 h-32 bg-red-50 rounded-full -z-10"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
