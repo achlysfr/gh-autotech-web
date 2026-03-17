@@ -29,12 +29,20 @@
           encantado de asesorarte y ofrecerte la mejor solución para tu vehículo.
         </p>
 
-        <form class="space-y-5 w-full max-w-[622px]">
+        <form
+          class="space-y-5 w-full max-w-[622px]"
+          method="POST"
+          action="https://formsubmit.co/administracion@ghautotech.com"
+        >
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde ghautotech.com" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
           <div class="flex flex-col">
             <label for="form-name" class="text-sm lg:text-[16px] font-normal mb-1 opacity-70 uppercase tracking-wider">Nombre</label>
             <input
               id="form-name"
               type="text"
+              name="nombre"
               required
               class="w-full h-[45px] border border-[#e8003e] bg-transparent px-4 focus:ring-1 focus:ring-[#e8003e] outline-none transition-shadow"
             />
@@ -45,6 +53,7 @@
             <input
               id="form-phone"
               type="tel"
+              name="telefono"
               required
               class="w-full h-[45px] border border-[#e8003e] bg-transparent px-4 focus:ring-1 focus:ring-[#e8003e] outline-none transition-shadow"
             />
@@ -54,6 +63,7 @@
             <label for="form-message" class="text-sm lg:text-[16px] font-normal mb-1 opacity-70 uppercase tracking-wider">Mensaje</label>
             <textarea
               id="form-message"
+              name="mensaje"
               required
               class="w-full h-[160px] border border-[#e8003e] bg-transparent px-4 py-3 focus:ring-1 focus:ring-[#e8003e] outline-none resize-none transition-shadow"
             ></textarea>
@@ -91,7 +101,7 @@
         <div class="relative w-full lg:w-[620px] aspect-[620/641]">
           <!-- Catalonia Map Image -->
           <img
-            src="/assets/map-catalonia.svg"
+            src="/assets/images/maps/map-catalonia.svg"
             alt="Mapa de Cataluña indicando ubicación de GHAutotech en Vila-Seca"
             class="w-full h-auto"
           />
@@ -99,7 +109,7 @@
           <!-- Red Connector Line -->
           <!-- Positioned to exit exactly from the bottom tip of the red region and reach the address base -->
           <img
-            src="/assets/line.svg"
+            src="/assets/icons/ui/line.svg"
             alt=""
             class="absolute left-[32.6%] bottom-[4.5%] h-[27%] w-auto hidden lg:block pointer-events-none"
           />

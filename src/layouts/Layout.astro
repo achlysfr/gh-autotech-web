@@ -8,6 +8,8 @@ interface Props {
 }
 
 const { title, description = "Taller mecánico profesional en Vila-seca, Tarragona. Te guiamos para tomar decisiones seguras sobre tu vehículo." } = Astro.props;
+const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
+const ogImage = "/assets/images/sobre-nosotros/imagen-portada.jpg";
 ---
 
 <!doctype html>
@@ -18,6 +20,7 @@ const { title, description = "Taller mecánico profesional en Vila-seca, Tarrago
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		{canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
 		<title>{title} | GHAutotech</title>
 
 		<!-- SEO -->
@@ -25,6 +28,33 @@ const { title, description = "Taller mecánico profesional en Vila-seca, Tarrago
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
 		<meta property="og:locale" content="es_ES" />
+		{canonicalUrl ? <meta property="og:url" content={canonicalUrl} /> : null}
+		<meta property="og:site_name" content="GHAutotech" />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:alt" content="GHAutotech – Taller mecánico en Vila-seca (Tarragona)" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={`${title} | GHAutotech`} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		<meta name="theme-color" content="#000000" />
+
+		<script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      name: "GHAutotech",
+      url: Astro.site ? Astro.site.toString() : undefined,
+      telephone: "+34 630 473 852",
+      email: "administracion@ghautotech.com",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "AV. de la Generalitat, 43F",
+        postalCode: "43480",
+        addressLocality: "Vila-Seca",
+        addressRegion: "Tarragona",
+        addressCountry: "ES"
+      }
+    })} />
 		
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	</head>
