@@ -7,35 +7,241 @@ import Footer from '../components/Footer.astro';
 <Layout title="Sobre Nosotros">
   <Header />
 
-  <main class="flex-grow pt-24">
-    <section class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 class="text-sm font-bold text-red-600 tracking-widest uppercase mb-3">Sobre Nosotros</h2>
-            <h3 class="text-4xl font-extrabold text-gray-900 mb-6">Tu Taller de Confianza</h3>
-            <p class="text-lg text-gray-500 mb-6 leading-relaxed">
-              En GHAutotech, nuestra misión va más allá de reparar coches. Nos enfocamos en construir una relación de confianza con cada cliente, garantizando la máxima transparencia en cada diagnóstico.
-            </p>
-            <p class="text-lg text-gray-500 leading-relaxed">
-              Trabajamos con todas las marcas y utilizamos tecnología de última generación para asegurar que tu vehículo recibe el mejor trato posible en Vila-seca.
+  <main class="flex-grow bg-black pt-[72px] md:pt-[114px]">
+    <!-- Hero Section -->
+    <section 
+      class="relative w-full aspect-[167/91] min-h-[400px] flex items-center pt-16 md:pt-24 lg:pt-28 overflow-hidden bg-[#0000000D]"
+    >
+      <!-- Background Image with Figma-specific settings -->
+      <div class="absolute inset-0">
+        <img 
+          src="/assets/images/sobre-nosotros/imagen-portada.jpg" 
+          alt="Taller mecánico GHAutotech" 
+          class="w-full h-full object-cover object-center [transform:scaleX(-1)_scale(1.05)]"
+        />
+        <!-- Subtle Figma Overlay (5% black) -->
+        <div class="absolute inset-0 bg-black/5"></div>
+      </div>
+
+      <div class="site-container relative z-10 w-full">
+        <div class="max-w-[1000px]">
+          <h1 class="text-[clamp(1.75rem,5vw,2.5rem)] font-extrabold text-white leading-normal tracking-[-0.06em] uppercase mb-4 sm:mb-8">
+            Reparamos tu coche, <br class="hidden sm:block" />
+            protegemos tu confianza
+          </h1>
+          
+          <div class="flex gap-4 sm:gap-6 items-start">
+            <div class="w-1.5 sm:w-2 h-full bg-[#e8003e] self-stretch mt-1.5 sm:mt-2 rounded-full hidden min-[400px]:block"></div>
+            <p class="text-[clamp(1rem,3vw,1.375rem)] text-white leading-normal font-medium max-w-[720px]">
+              En GHAutotech cuidamos cada vehículo como si fuera nuestro. Con experiencia en mecánica, electricidad y electrónica del automóvil, combinamos tecnología avanzada y trato cercano para que cada cliente se sienta seguro, respaldado y valorado.
             </p>
           </div>
-          <div class="relative">
-            <div class="aspect-square bg-gray-100 rounded-3xl overflow-hidden flex items-center justify-center relative z-10">
-              <img
-                src="/assets/images/sobre-nosotros.jpg"
-                alt="Taller mecánico GHAutotech en Vila-seca"
-                class="w-full h-full object-cover"
-                onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');"
-                onload="this.nextElementSibling.classList.add('hidden');"
+
+          <!-- Navigation Arrow -->
+          <div class="mt-10 sm:mt-14 md:mt-20 pl-6 sm:pl-8">
+            <a 
+              href="#sobre-nosotros-descripcion" 
+              class="inline-block hover:translate-y-2 transition-transform duration-300"
+              aria-label="Explorar más"
+            >
+              <img 
+                src="/assets/images/sobre-nosotros/ARROW.svg" 
+                alt="Explorar más" 
+                class="w-[40px] md:w-[60px] h-auto"
               />
-              <span class="text-gray-400 font-medium absolute inset-0 hidden flex items-center justify-center bg-gray-100">
-                Imagen del Taller
-              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre nosotros: descripción -->
+    <section id="sobre-nosotros-descripcion" class="bg-white py-14 sm:py-16 md:py-24 scroll-mt-[72px] md:scroll-mt-[114px]">
+      <div class="site-container">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row justify-center gap-10 lg:gap-16">
+          <div class="w-full lg:flex-1 lg:text-right">
+            <h2 class="text-right text-[clamp(1.75rem,4vw,2.1875rem)] leading-none tracking-tight text-black font-normal">
+              GHAutotech es un <span class="font-bold">taller mecánico profesional</span> ubicado en Vila-seca (Tarragona), especializado en el mantenimiento, reparación y mejora de todo tipo de vehículos.
+            </h2>
+
+            <p class="mt-6 text-right text-[clamp(0.875rem,2.2vw,1rem)] leading-snug text-black/90 max-w-prose ml-auto">
+              Nuestro compromiso es ofrecer servicio técnico automotriz de calidad, combinando experiencia, conocimiento técnico y atención cercana para que cada cliente salga satisfecho. Nos esforzamos por ser tu primer taller de confianza, tanto para revisiones rutinarias como para intervenciones más exigentes.
+            </p>
+          </div>
+
+          <div class="w-full lg:flex-1">
+            <p class="text-[clamp(1.5rem,4.5vw,2.5rem)] font-extrabold leading-tight tracking-tight text-black max-w-2xl">
+              Cada coche que entra en GHAutotech recibe una <span class="text-[#e8003e]">atención detallada</span>, diagnósticos precisos y servicios que priorizan tu seguridad y la de tu vehículo.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-container mt-10 sm:mt-12 md:mt-16 text-center">
+        <a
+          href="/horario-contacto"
+          class="inline-flex items-center justify-center bg-[#e8003e] px-8 py-4 sm:px-10 sm:py-5 text-base sm:text-lg font-black uppercase tracking-widest text-white hover:bg-black transition-all duration-300"
+        >
+          CONTÁCTANOS
+        </a>
+      </div>
+    </section>
+
+    <!-- Collage: sobre nosotros -->
+    <section class="bg-white pb-14 sm:pb-16 md:pb-24">
+      <div class="site-container">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 lg:grid-rows-2 gap-3 sm:gap-4 lg:aspect-[16/9] lg:items-stretch">
+          <!-- Fila 1 (4 columnas en desktop) -->
+          <div class="relative w-full overflow-hidden bg-black/5 aspect-[113/85] lg:col-span-3 lg:aspect-auto lg:h-full">
+            <img
+              src="/assets/images/sobre-nosotros/imagen1.png"
+              alt="Taller GHAutotech"
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="relative w-full overflow-hidden bg-black/5 aspect-[103/102] lg:col-span-3 lg:aspect-auto lg:h-full">
+            <img
+              src="/assets/images/sobre-nosotros/imagen2.png"
+              alt="Taller GHAutotech"
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="relative w-full overflow-hidden bg-black/5 aspect-[178/127] lg:col-span-3 lg:aspect-auto lg:h-full">
+            <img
+              src="/assets/images/sobre-nosotros/imagen3.jpg"
+              alt="Taller GHAutotech"
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="relative w-full overflow-hidden bg-black/5 aspect-[47/61] lg:col-span-3 lg:aspect-auto lg:h-full">
+            <img
+              src="/assets/images/sobre-nosotros/imagen4.png"
+              alt="Taller GHAutotech"
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <!-- Fila 2 (3 columnas en desktop) -->
+          <div class="relative w-full overflow-hidden bg-black/5 aspect-[776.91/518] lg:col-span-4 lg:aspect-auto lg:h-full">
+            <img
+              src="/assets/images/sobre-nosotros/imagen5.jpg"
+              alt="Taller GHAutotech"
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="relative w-full overflow-hidden bg-black/5 aspect-[677/411] lg:col-span-4 lg:aspect-auto lg:h-full">
+            <img
+              src="/assets/images/sobre-nosotros/imagen6.png"
+              alt="Taller GHAutotech"
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="relative w-full overflow-hidden bg-black/5 aspect-[159/124] lg:col-span-4 lg:aspect-auto lg:h-full">
+            <img
+              src="/assets/images/sobre-nosotros/imagen7.png"
+              alt="Taller GHAutotech"
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dueño del taller -->
+    <section class="bg-white py-18 sm:py-20 md:py-28">
+      <div class="site-container">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div class="w-full bg-black/15 flex items-center justify-center text-black/60 font-semibold aspect-square">
+              Falta foto dueño taller
             </div>
-            <div class="absolute -bottom-6 -left-6 w-full h-full border-2 border-red-600 rounded-3xl -z-10"></div>
-            <div class="absolute -top-6 -right-6 w-32 h-32 bg-red-50 rounded-full -z-10"></div>
+
+            <div class="flex flex-col">
+              <h2 class="text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.0] tracking-tight text-black font-extrabold uppercase">
+                ¿Quién pone <br />
+                en movimiento GHAutotech?
+              </h2>
+
+              <div class="mt-6 space-y-6 text-black/90 text-base sm:text-lg leading-relaxed">
+                <p>
+                  <span class="font-bold text-black">¡Hola! Soy Fran.</span> Desde niño, los coches han sido mi mundo: crecí aprendiendo en el taller de mi padre y de mi tío, rodeado de herramientas, motores y curiosidad por cada detalle hasta que decidí abrir GHAutotech, un taller donde cada vehículo recibe atención profesional y cariño, como si fuera mío.
+                </p>
+
+                <p>
+                  Mi objetivo es que cada cliente sienta confianza y tranquilidad, sabiendo que su coche está en manos de alguien que realmente ama lo que hace y se preocupa por cada detalle.
+                </p>
+
+                <p class="font-extrabold text-black">
+                  En GHAutotech, cada reparación es una promesa de calidad y cuidado para ti y tu coche.
+                </p>
+              </div>
+
+              <div class="mt-8 sm:mt-10">
+                <a
+                  href="/horario-contacto"
+                  class="inline-flex items-center justify-center bg-[#e8003e] px-8 py-4 sm:px-10 sm:py-5 text-base sm:text-lg font-black uppercase tracking-widest text-white hover:bg-black transition-all duration-300"
+                >
+                  LLÁMAME
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fran (imagen + cita) -->
+    <section class="w-full bg-black">
+      <div class="relative w-full aspect-[171/86] overflow-hidden">
+        <img
+          src="/assets/images/sobre-nosotros/imagen_Fran.png"
+          alt="Fran, gerente de GHAutotech"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+          loading="lazy"
+          decoding="async"
+        />
+
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+
+        <div class="absolute inset-0">
+          <div class="site-container h-full flex items-center">
+            <div class="max-w-xl text-white font-sans pl-4 sm:pl-8 md:pl-12 lg:pl-20 xl:pl-24">
+              <p class="text-[clamp(1.25rem,3.2vw,2.5rem)] leading-tight font-normal">
+                “Cada vehículo <br />
+                que entra en nuestro taller es tratado <br />
+                como si fuera propio. <br /><br />
+                La confianza de nuestros clientes es nuestro <br />
+                mayor motor.”
+              </p>
+
+              <div class="mt-10">
+                <p class="font-extrabold uppercase tracking-wide text-[clamp(1rem,2.2vw,1.25rem)]">
+                  Fran Garcia Toquero
+                </p>
+                <p class="mt-1 inline-block font-extrabold uppercase text-sm tracking-widest border-b-2 border-white/70">
+                  Gerente de GHAutotech
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

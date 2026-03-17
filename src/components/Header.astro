@@ -1,25 +1,24 @@
 ---
 // src/components/Header.astro
+const { pathname } = Astro.url;
+const normalizedPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
+
 const navItems = [
   {
     name: "INICIO",
     href: "/",
-    active: true,
   },
   {
     name: "Sobre nosotros",
     href: "/sobre-nosotros",
-    active: false,
   },
   {
     name: "SERVICIOS",
     href: "/servicios",
-    active: false,
   },
   {
     name: "HORARIO Y CONTACTO",
     href: "/horario-contacto",
-    active: false,
   },
 ];
 
@@ -52,18 +51,22 @@ const socialIcons = [
     <div class="hidden md:flex items-center gap-8 lg:gap-[74px]">
       <nav class="flex items-center gap-6 lg:gap-8">
         {
-          navItems.map((item) => (
-            <a
-              href={item.href}
-              class={`h-[29px] flex items-center shrink-0 whitespace-nowrap text-[20px] lg:text-[22px] font-extrabold uppercase tracking-[-1.32px] transition-colors duration-200 ${
-                item.active
-                  ? "text-[#e8003e]"
-                  : "text-white hover:text-[#e8003e]"
-              }`}
-            >
-              {item.name}
-            </a>
-          ))
+          navItems.map((item) => {
+            const itemPath = item.href.endsWith('/') ? item.href : `${item.href}/`;
+            const isActive = normalizedPath === itemPath;
+            return (
+              <a
+                href={item.href}
+                class={`h-[29px] flex items-center shrink-0 whitespace-nowrap text-[20px] lg:text-[22px] font-extrabold uppercase tracking-[-1.32px] transition-colors duration-200 ${
+                  isActive
+                    ? "text-[#e8003e]"
+                    : "text-white hover:text-[#e8003e]"
+                }`}
+              >
+                {item.name}
+              </a>
+            );
+          })
         }
       </nav>
 
