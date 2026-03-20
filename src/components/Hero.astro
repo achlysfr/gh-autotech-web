@@ -22,6 +22,7 @@
     <div
       class="absolute inset-0 z-0 h-full w-full opacity-60 lg:opacity-100"
       style="
+        /* Máscara SVG para recortar el vídeo sin depender de clip-path complejo. */
         mask-image: url('/assets/icons/ui/mask-hero.svg');
         mask-size: cover;
         mask-repeat: no-repeat;
@@ -30,18 +31,18 @@
         -webkit-mask-repeat: no-repeat;
       "
     >
+      <!-- Fallback visual mientras el vídeo no está listo o si falla la reproducción. -->
       <video
         autoplay
         loop
         muted
         playsinline
         preload="none"
-        loading="lazy"
-        class="w-full h-full object-cover"
+        class="w-full h-full object-cover lazy-video"
         poster="/assets/images/placeholder/placeholder-coche.png"
       >
         <source
-          src="/assets/videos/AdobeStock_449143556.mp4"
+          data-src="/assets/videos/AdobeStock_449143556.mp4"
           type="video/mp4"
         />
       </video>

@@ -11,6 +11,7 @@ import Footer from '../components/Footer.astro';
   <Header />
 
   <main class="flex-grow pt-[72px] md:pt-[114px]">
+    <!-- Bloque principal: mapa y datos clave de contacto/horario. -->
     <section class="bg-white min-h-[calc(100svh-72px)] md:min-h-[calc(100svh-114px)] flex items-center">
       <div class="site-container">
         <h1 class="sr-only">Horario y Contacto de GHAutotech - Taller Mecánico en Vila-seca</h1>
@@ -108,6 +109,7 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="mt-10 sm:mt-12 md:mt-16 flex justify-center">
+          <!-- Ancla a formulario para mantener el CTA en la misma página. -->
           <a
             href="#contacto"
             class="inline-flex hover:translate-y-2 transition-transform duration-300"
@@ -125,6 +127,7 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
+    <!-- Formulario de contacto dedicado; scroll-mt evita quedar bajo el header fijo. -->
     <section id="contacto" class="bg-[#135C8A] py-14 sm:py-16 lg:py-20 scroll-mt-[72px] md:scroll-mt-[114px]">
       <div class="max-w-[1280px] w-full mx-auto px-6 sm:px-8 lg:px-12">
 
@@ -203,6 +206,7 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
+    <!-- Imagen de cierre de página para continuidad visual con la fachada del taller. -->
     <section class="flex items-stretch justify-center overflow-hidden">
       <div class="w-full">
         <div class="relative w-full aspect-[2117.96/1412.15] max-h-[80svh]">

@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import FooterServicios from '../components/FooterServicios.astro';
 
+// Fuente única para renderizar cards de servicio con el mismo patrón visual.
 const servicios = [
   {
     icon: '/assets/iconos-servicio/icono_services_1.svg',
@@ -48,6 +49,7 @@ const servicios = [
   },
 ];
 
+// FAQPage para rich results en búsquedas relacionadas con servicios del taller.
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -109,15 +111,15 @@ const faqSchema = {
     <section class="relative min-h-[640px] lg:h-[92svh] max-h-[980px] bg-black overflow-hidden flex items-center pt-[72px] md:pt-[114px]">
       <div class="absolute inset-0 w-full h-full" aria-hidden="true">
         <video
-          class="absolute inset-0 w-full h-full object-cover object-center"
+          class="absolute inset-0 w-full h-full object-cover object-center lazy-video"
           autoplay
           muted
           loop
           playsinline
           preload="none"
-          loading="lazy"
+          poster="/assets/images/placeholder/placeholder-coche.png"
         >
-          <source src="/assets/videos/AdobeStock_898118759.mp4" type="video/mp4" />
+          <source data-src="/assets/videos/AdobeStock_898118759.mp4" type="video/mp4" />
         </video>
         <div class="absolute inset-0 bg-black/30 pointer-events-none" aria-hidden="true"></div>
       </div>

@@ -13,6 +13,7 @@ import ContactForm from '../components/ContactForm.astro';
   <Header />
 
   <main class="flex-grow">
+    <!-- Hero principal de captación con CTA directo al contacto. -->
     <Hero />
 
     <!-- DESCRIPTION SECTION -->
@@ -50,7 +51,7 @@ import ContactForm from '../components/ContactForm.astro';
       </div>
     </section>
 
-    <!-- SERVICE CARDS -->
+    <!-- Tarjetas informativas: no son clicables, solo resumen de propuesta de valor. -->
     <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 w-full">
       <!-- Card 1 -->
       <div class="bg-black min-h-[300px] lg:h-[328px] p-8 lg:p-10 flex flex-col justify-between group border-b md:border-b-0 md:border-r border-white/5">
@@ -90,7 +91,7 @@ import ContactForm from '../components/ContactForm.astro';
       </div>
     </section>
 
-    <!-- CONTACT FORM & MAP -->
+    <!-- Sección de contacto reutilizable para mantener consistencia entre páginas. -->
     <ContactForm />
   </main>
 

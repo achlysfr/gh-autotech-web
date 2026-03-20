@@ -7,11 +7,13 @@ interface Props {
 }
 
 const { title, description = "Taller mecánico profesional en Vila-seca, Tarragona. Te guiamos para tomar decisiones seguras sobre tu vehículo." } = Astro.props;
+// Canonical absoluto para evitar contenido duplicado entre rutas con/sin trailing slash.
 const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
 const siteUrl = Astro.site ? Astro.site.toString() : undefined;
 const ogImagePath = "/assets/images/sobre-nosotros/imagen-portada.jpg";
 const ogImageUrl = Astro.site ? new URL(ogImagePath, Astro.site).toString() : ogImagePath;
 
+// Schema global de negocio local; se inyecta en todas las páginas para reforzar SEO local.
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "AutoRepair",
@@ -61,6 +63,7 @@ const localBusinessSchema = {
   ]
 };
 
+// Breadcrumb básico: Inicio + página actual (si no es home).
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -92,7 +95,7 @@ const breadcrumbSchema = {
 		<meta name="geo.region" content="ES-T" />
 		<meta name="geo.placename" content="Vila-seca" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
 		<link rel="apple-touch-icon" href="/assets/icons/ui/apple-touch-icon.png" />
 		<meta name="generator" content={Astro.generator} />
 		{canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
@@ -121,10 +124,47 @@ const breadcrumbSchema = {
 
 		<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 		{canonicalUrl && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
-		
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	</head>
 	<body class="bg-white text-black antialiased selection:bg-[#e8003e] selection:text-white flex flex-col min-h-screen">
 		<slot />
+
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const lazyVideos = document.querySelectorAll('video.lazy-video');
+
+				if ('IntersectionObserver' in window) {
+					const videoObserver = new IntersectionObserver(
+						(entries) => {
+							entries.forEach((entry) => {
+								if (entry.isIntersecting) {
+									const video = entry.target as HTMLVideoElement;
+									const source = video.querySelector('source');
+									if (source?.dataset.src) {
+										source.src = source.dataset.src;
+										video.load();
+										video.play().catch(() => {});
+									}
+									video.classList.remove('lazy-video');
+									videoObserver.unobserve(video);
+								}
+							});
+						},
+						{ rootMargin: '50px' }
+					);
+
+					lazyVideos.forEach((video) => videoObserver.observe(video));
+				} else {
+					lazyVideos.forEach((el) => {
+						const video = el as HTMLVideoElement;
+						const source = video.querySelector('source');
+						if (source?.dataset.src) {
+							source.src = source.dataset.src;
+							video.load();
+							video.play().catch(() => {});
+						}
+					});
+				}
+			});
+		</script>
 	</body>
 </html>

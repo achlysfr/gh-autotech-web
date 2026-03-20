@@ -1,17 +1,17 @@
 ---
-// Background video del hero (Adobe Stock)
+// Variante mínima del fondo de hero para páginas/experimentos que no requieren texto propio.
 ---
 
 <div class="absolute inset-0 w-full h-full" aria-hidden="true">
   <video
-    class="absolute inset-0 w-full h-full object-cover object-center"
+    class="absolute inset-0 w-full h-full object-cover object-center lazy-video"
     autoplay
     muted
     loop
     playsinline
     preload="metadata"
   >
-    <source src="/assets/videos/AdobeStock_449143556.mp4" type="video/mp4" />
+    <source data-src="/assets/videos/AdobeStock_449143556.mp4" type="video/mp4" />
   </video>
 
   <!-- Overlay suave para legibilidad del texto (no tapa el vídeo) -->

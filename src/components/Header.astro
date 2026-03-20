@@ -1,5 +1,6 @@
 ---
 const { pathname } = Astro.url;
+// Normaliza ruta para que '/ruta' y '/ruta/' activen el mismo item del menú.
 const normalizedPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
 
 const navItems = [
@@ -80,7 +81,7 @@ const socialIcons = [
                 aria-label={icon.label}
                 class="shrink-0 hover:opacity-80 transition-opacity"
               >
-                <img src={icon.src} alt={icon.label} class="w-[28px] h-[28px]" />
+                <img src={icon.src} alt={icon.label} class="w-[28px] h-[28px]" loading="lazy" decoding="async" />
               </a>
             ))
           }
@@ -163,7 +164,7 @@ const socialIcons = [
               aria-label={icon.label}
               class="shrink-0 hover:opacity-80 transition-opacity"
             >
-              <img src={icon.src} alt={icon.label} class="w-7 h-7" />
+              <img src={icon.src} alt={icon.label} class="w-7 h-7" loading="lazy" decoding="async" />
             </a>
           ))
         }
@@ -178,14 +179,17 @@ const socialIcons = [
   const menuIconOpen = document.getElementById('menu-icon-open');
   const menuIconClose = document.getElementById('menu-icon-close');
 
+  const closeMenu = () => {
+    mobileMenu?.classList.add('hidden');
+    menuBtn?.setAttribute('aria-expanded', 'false');
+    menuIconOpen?.classList.remove('hidden');
+    menuIconClose?.classList.add('hidden');
+  };
+
   menuBtn?.addEventListener('click', () => {
     const isOpen = !mobileMenu?.classList.contains('hidden');
-    
     if (isOpen) {
-      mobileMenu?.classList.add('hidden');
-      menuBtn?.setAttribute('aria-expanded', 'false');
-      menuIconOpen?.classList.remove('hidden');
-      menuIconClose?.classList.add('hidden');
+      closeMenu();
     } else {
       mobileMenu?.classList.remove('hidden');
       menuBtn?.setAttribute('aria-expanded', 'true');
@@ -194,13 +198,7 @@ const socialIcons = [
     }
   });
 
-  // Close menu when clicking a link
   mobileMenu?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu?.classList.add('hidden');
-      menuBtn?.setAttribute('aria-expanded', 'false');
-      menuIconOpen?.classList.remove('hidden');
-      menuIconClose?.classList.add('hidden');
-    });
+    link.addEventListener('click', closeMenu);
   });
 </script>
