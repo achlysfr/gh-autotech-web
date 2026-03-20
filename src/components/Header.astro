@@ -23,11 +23,11 @@ const navItems = [
 ];
 
 const socialIcons = [
-  { src: "/assets/icons/social/rrss-ig.svg", href: "#" },
-  { src: "/assets/icons/social/rrss-fb.svg", href: "#" },
-  { src: "/assets/icons/social/rrss-lk.svg", href: "#" },
-  { src: "/assets/icons/social/rrss-x.svg", href: "#" },
-  { src: "/assets/icons/social/rrss-extra.svg", href: "#" },
+  { src: "/assets/icons/social/rrss-ig.svg", href: "#", label: "Instagram de GHAutotech" },
+  { src: "/assets/icons/social/rrss-fb.svg", href: "#", label: "Facebook de GHAutotech" },
+  { src: "/assets/icons/social/rrss-lk.svg", href: "#", label: "LinkedIn de GHAutotech" },
+  { src: "/assets/icons/social/rrss-x.svg", href: "#", label: "Perfil de GHAutotech en X" },
+  { src: "/assets/icons/social/rrss-extra.svg", href: "#", label: "Red social de GHAutotech" },
 ];
 ---
 
@@ -77,10 +77,11 @@ const socialIcons = [
             <a
               href={icon.href}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label={icon.label}
               class="shrink-0 hover:opacity-80 transition-opacity"
             >
-              <img src={icon.src} alt="" class="w-[28px] h-[28px]" />
+              <img src={icon.src} alt={icon.label} class="w-[28px] h-[28px]" />
             </a>
           ))
         }
