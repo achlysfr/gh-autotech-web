@@ -1,5 +1,4 @@
 ---
-// src/components/Header.astro
 const { pathname } = Astro.url;
 const normalizedPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
 
@@ -31,47 +30,130 @@ const socialIcons = [
 ];
 ---
 
-<!-- Header height adjusted to match logo scale + visual balance -->
 <header
-  class="fixed inset-x-0 top-0 z-50 bg-black text-white h-[72px] md:h-[114px] flex items-center"
+  class="fixed inset-x-0 top-0 z-50 bg-black text-white"
 >
-  <div class="site-container flex items-center justify-between">
-    <!-- Logo -->
-    <div class="flex-shrink-0 flex items-center">
-      <a href="/" class="flex items-center group">
-        <img
-          src="/assets/brand/logo-ghautotech.svg"
-          alt="GHAutotech"
-          class="h-[44px] md:h-[70.328px] md:w-[248px] w-auto object-contain"
-        />
-      </a>
-    </div>
+  <div class="h-[72px] md:h-[114px] flex items-center">
+    <div class="site-container flex items-center justify-between w-full">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center">
+        <a href="/" class="flex items-center group">
+          <img
+            src="/assets/brand/logo-ghautotech.svg"
+            alt="GHAutotech - Ir al inicio"
+            class="h-[44px] md:h-[70.328px] md:w-[248px] w-auto object-contain"
+          />
+        </a>
+      </div>
 
-    <!-- Main Navigation & Social Icons (Desktop) -->
-    <div class="hidden md:flex items-center gap-8 lg:gap-[74px]">
-      <nav class="flex items-center gap-6 lg:gap-8">
-        {
-          navItems.map((item) => {
-            const itemPath = item.href.endsWith('/') ? item.href : `${item.href}/`;
-            const isActive = normalizedPath === itemPath;
-            return (
+      <!-- Main Navigation & Social Icons (Desktop) -->
+      <div class="hidden md:flex items-center gap-8 lg:gap-[74px]">
+        <nav class="flex items-center gap-6 lg:gap-8">
+          {
+            navItems.map((item) => {
+              const itemPath = item.href.endsWith('/') ? item.href : `${item.href}/`;
+              const isActive = normalizedPath === itemPath;
+              return (
+                <a
+                  href={item.href}
+                  class={`h-[29px] flex items-center shrink-0 whitespace-nowrap text-[20px] lg:text-[22px] font-extrabold uppercase tracking-[-1.32px] transition-colors duration-200 ${
+                    isActive
+                      ? "text-[#e8003e]"
+                      : "text-white hover:text-[#e8003e]"
+                  }`}
+                >
+                  {item.name}
+                </a>
+              );
+            })
+          }
+        </nav>
+
+        <!-- Iconos RRSS -->
+        <div class="flex items-center gap-[13px]">
+          {
+            socialIcons.map((icon) => (
               <a
-                href={item.href}
-                class={`h-[29px] flex items-center shrink-0 whitespace-nowrap text-[20px] lg:text-[22px] font-extrabold uppercase tracking-[-1.32px] transition-colors duration-200 ${
-                  isActive
-                    ? "text-[#e8003e]"
-                    : "text-white hover:text-[#e8003e]"
-                }`}
+                href={icon.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={icon.label}
+                class="shrink-0 hover:opacity-80 transition-opacity"
               >
-                {item.name}
+                <img src={icon.src} alt={icon.label} class="w-[28px] h-[28px]" />
               </a>
-            );
-          })
-        }
-      </nav>
+            ))
+          }
+        </div>
+      </div>
 
-      <!-- Iconos RRSS -->
-      <div class="flex items-center gap-[13px]">
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button
+          type="button"
+          id="mobile-menu-btn"
+          class="text-white hover:text-[#e8003e] focus:outline-none p-2"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <svg
+            id="menu-icon-open"
+            class="h-8 w-8 block"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg
+            id="menu-icon-close"
+            class="h-8 w-8 hidden"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu dropdown -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden bg-black border-t border-white/10"
+  >
+    <nav class="site-container py-6 flex flex-col gap-4">
+      {
+        navItems.map((item) => {
+          const itemPath = item.href.endsWith('/') ? item.href : `${item.href}/`;
+          const isActive = normalizedPath === itemPath;
+          return (
+            <a
+              href={item.href}
+              class={`text-xl font-bold uppercase tracking-wide py-2 border-b border-white/10 ${
+                isActive
+                  ? "text-[#e8003e]"
+                  : "text-white hover:text-[#e8003e]"
+              }`}
+            >
+              {item.name}
+            </a>
+          );
+        })
+      }
+      
+      <!-- Social icons mobile -->
+      <div class="flex items-center gap-4 pt-4">
         {
           socialIcons.map((icon) => (
             <a
@@ -81,33 +163,44 @@ const socialIcons = [
               aria-label={icon.label}
               class="shrink-0 hover:opacity-80 transition-opacity"
             >
-              <img src={icon.src} alt={icon.label} class="w-[28px] h-[28px]" />
+              <img src={icon.src} alt={icon.label} class="w-7 h-7" />
             </a>
           ))
         }
       </div>
-    </div>
-
-    <!-- Mobile menu button -->
-    <div class="md:hidden flex items-center">
-      <button
-        type="button"
-        class="text-white hover:text-[#e8003e] focus:outline-none p-2"
-        aria-label="Abrir menú"
-      >
-        <svg
-          class="h-8 w-8"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
+    </nav>
   </div>
 </header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIconOpen = document.getElementById('menu-icon-open');
+  const menuIconClose = document.getElementById('menu-icon-close');
+
+  menuBtn?.addEventListener('click', () => {
+    const isOpen = !mobileMenu?.classList.contains('hidden');
+    
+    if (isOpen) {
+      mobileMenu?.classList.add('hidden');
+      menuBtn?.setAttribute('aria-expanded', 'false');
+      menuIconOpen?.classList.remove('hidden');
+      menuIconClose?.classList.add('hidden');
+    } else {
+      mobileMenu?.classList.remove('hidden');
+      menuBtn?.setAttribute('aria-expanded', 'true');
+      menuIconOpen?.classList.add('hidden');
+      menuIconClose?.classList.remove('hidden');
+    }
+  });
+
+  // Close menu when clicking a link
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      menuBtn?.setAttribute('aria-expanded', 'false');
+      menuIconOpen?.classList.remove('hidden');
+      menuIconClose?.classList.add('hidden');
+    });
+  });
+</script>

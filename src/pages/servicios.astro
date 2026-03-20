@@ -9,39 +9,94 @@ const servicios = [
     titleHtml:
       '<span class="text-[#e8003e]">Mantenimiento</span><br />integral de vehículos',
     description: 'Servicios preventivos y revisiones completas.',
+    alt: 'Icono de llave y tuerca representando mantenimiento de vehículos',
   },
   {
     icon: '/assets/iconos-servicio/icono_services_2.svg',
     titleHtml:
       '<span class="text-[#e8003e]">Asesoramiento</span><br />técnico profesional',
     description: 'Te guiamos para tomar decisiones seguras.',
+    alt: 'Icono de escudo representando asesoramiento técnico profesional',
   },
   {
     icon: '/assets/iconos-servicio/icono_services_3.svg',
     titleHtml:
       'Diagnóstico<br />y reparación <span class="text-[#e8003e]">mecánica</span>',
     description: 'Solución de averías y fallos técnicos.',
+    alt: 'Icono de engranajes representando diagnóstico y reparación mecánica',
   },
   {
     icon: '/assets/iconos-servicio/icono_services_4.svg',
     titleHtml:
       'Revisión pre-<span class="text-[#e8003e]">ITV</span><br />y ajuste técnico',
     description: 'Prepara tu coche con confianza antes de la inspección oficial.',
+    alt: 'Icono de checklist representando revisión pre-ITV',
   },
   {
     icon: '/assets/iconos-servicio/icono_services_5.svg',
     titleHtml:
       'Reparación <span class="text-[#e8003e]">electrónica</span><br />y sistemas modernos',
     description: 'Desde sensores hasta sistemas integrados.',
+    alt: 'Icono de chip representando reparación electrónica',
   },
   {
     icon: '/assets/iconos-servicio/icono_services_6.svg',
     titleHtml:
       'Reparación y mejora<br />de <span class="text-[#e8003e]">componentes</span>',
     description: 'Desde frenos hasta sistemas eléctricos',
+    alt: 'Icono de herramientas representando reparación y mejora de componentes',
   },
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta una revisión pre-ITV en GHAutotech?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofrecemos presupuestos personalizados para la revisión pre-ITV. Contáctanos para recibir una estimación gratuita según tu vehículo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto dura el mantenimiento de un vehículo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El tiempo de mantenimiento varía según el tipo de servicio. Desde revisiones rápidas de 30 minutos hasta mantenimientos completos que pueden tomar varias horas. Siempre te informamos del tiempo estimado previamente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hacen diagnóstico de averías electrónicas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, somos especialistas en diagnóstico y reparación de sistemas electrónicos y computers de a bordo. Utilizamos tecnología avanzada para identificar y solucionar averías electrónicas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es el horario del taller?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lunes a jueves: 9:00-13:00 y 15:00-19:00. Viernes: 9:00-14:00. Sábados y domingos cerrado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito cita previa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Recomendamos pedir cita previa para garantizar disponibilidad y reducir tiempos de espera. Puedes contactarnos por teléfono, email o a través de nuestro formulario."
+      }
+    }
+  ]
+};
 ---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 <Layout
   title="Servicios de taller mecánico en Vila-seca"
@@ -59,7 +114,8 @@ const servicios = [
           muted
           loop
           playsinline
-          preload="metadata"
+          preload="none"
+          loading="lazy"
         >
           <source src="/assets/videos/AdobeStock_898118759.mp4" type="video/mp4" />
         </video>
@@ -92,11 +148,11 @@ const servicios = [
             <a
               href="#servicios-contenido"
               class="inline-block hover:translate-y-2 transition-transform duration-300"
-              aria-label="Explorar más"
+              aria-label="Explorar más servicios"
             >
               <img
                 src="/assets/images/sobre-nosotros/ARROW.svg"
-                alt="Explorar más"
+                alt="Flecha animada para explorar servicios"
                 class="w-[40px] md:w-[60px] h-auto"
               />
             </a>
@@ -118,8 +174,7 @@ const servicios = [
               <div class="shrink-0 pt-1">
                 <img
                   src={s.icon}
-                  alt=""
-                  aria-hidden="true"
+                  alt={s.alt}
                   class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
                   loading="lazy"
                   decoding="async"
@@ -145,4 +200,3 @@ const servicios = [
 
   <FooterServicios />
 </Layout>
-

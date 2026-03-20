@@ -1,5 +1,4 @@
 ---
-// Archivo base de layout
 import '../styles/global.css';
 
 interface Props {
@@ -9,8 +8,77 @@ interface Props {
 
 const { title, description = "Taller mecánico profesional en Vila-seca, Tarragona. Te guiamos para tomar decisiones seguras sobre tu vehículo." } = Astro.props;
 const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
+const siteUrl = Astro.site ? Astro.site.toString() : undefined;
 const ogImagePath = "/assets/images/sobre-nosotros/imagen-portada.jpg";
 const ogImageUrl = Astro.site ? new URL(ogImagePath, Astro.site).toString() : ogImagePath;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "GHAutotech",
+  "description": "Taller mecánico profesional en Vila-seca especializado en reparación, mantenimiento y diagnóstico de vehículos.",
+  "url": siteUrl,
+  "telephone": "+34 630 473 852",
+  "email": "administracion@ghautotech.com",
+  "priceRange": "€€",
+  "image": siteUrl ? new URL("/assets/brand/logo-ghautotech.svg", Astro.site).toString() : undefined,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "AV. de la Generalitat, 43F",
+    "postalCode": "43480",
+    "addressLocality": "Vila-Seca",
+    "addressRegion": "Tarragona",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "41.1171",
+    "longitude": "1.1442"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "09:00",
+      "closes": "13:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "15:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/ghautotech/",
+    "https://www.facebook.com/ghautotech/"
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": siteUrl
+    },
+    ...(Astro.url.pathname !== "/" ? [{
+      "@type": "ListItem",
+      "position": 2,
+      "name": title.split(" | ")[0],
+      "item": canonicalUrl
+    }] : [])
+  ]
+};
 ---
 
 <!doctype html>
@@ -18,17 +86,21 @@ const ogImageUrl = Astro.site ? new URL(ogImagePath, Astro.site).toString() : og
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
-		<meta name="robots" content="index,follow" />
+		<meta name="robots" content="index,follow,max-image-preview:large" />
 		<meta name="author" content="GHAutotech" />
+		<meta name="keywords" content="taller mecánico Vila-seca, reparación coches Tarragona, mantenimiento vehículos, diagnóstico averías, ITV pre-revisión, mecánica electricidad electrónica, taller multimarca Vila-Seca, reparacion coche Costa Daurada" />
 		<meta name="geo.region" content="ES-T" />
 		<meta name="geo.placename" content="Vila-seca" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" href="/assets/icons/ui/apple-touch-icon.png" />
 		<meta name="generator" content={Astro.generator} />
 		{canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
 		<title>{title} | GHAutotech</title>
 
-		<!-- SEO -->
+		<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+		<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
 		<meta property="og:title" content={`${title} | GHAutotech`} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
@@ -37,29 +109,18 @@ const ogImageUrl = Astro.site ? new URL(ogImagePath, Astro.site).toString() : og
 		<meta property="og:site_name" content="GHAutotech" />
 		<meta property="og:image" content={ogImageUrl} />
 		<meta property="og:image:alt" content="GHAutotech – Taller mecánico en Vila-seca (Tarragona)" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
 
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={`${title} | GHAutotech`} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImageUrl} />
-		<meta name="theme-color" content="#000000" />
+		<meta name="twitter:image:alt" content="GHAutotech – Taller mecánico en Vila-seca (Tarragona)" />
+		<meta name="theme-color" content="#e8003e" />
 
-		<script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "AutoRepair",
-      name: "GHAutotech",
-      url: Astro.site ? Astro.site.toString() : undefined,
-      telephone: "+34 630 473 852",
-      email: "administracion@ghautotech.com",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "AV. de la Generalitat, 43F",
-        postalCode: "43480",
-        addressLocality: "Vila-Seca",
-        addressRegion: "Tarragona",
-        addressCountry: "ES"
-      }
-    })} />
+		<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+		{canonicalUrl && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 		
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	</head>

@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Página no encontrada"
+  description="La página que buscas no existe. GHAutotech - Taller mecánico profesional en Vila-seca, Tarragona."
+>
+  <Header />
+
+  <main class="flex-grow bg-black pt-[72px] md:pt-[114px]">
+    <section class="min-h-[calc(100svh-72px)] md:min-h-[calc(100svh-114px)] flex items-center justify-center">
+      <div class="site-container text-center">
+        <h1 class="text-[clamp(4rem,15vw,10rem)] font-black text-[#e8003e] leading-none tracking-tight mb-4">
+          404
+        </h1>
+        <p class="text-[clamp(1.5rem,4vw,2.5rem)] font-bold text-white uppercase tracking-wide mb-8">
+          Página no encontrada
+        </p>
+        <p class="text-lg text-white/70 max-w-xl mx-auto mb-12">
+          Lo sentimos, la página que buscas no existe o ha sido movida.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/"
+            class="inline-flex items-center justify-center bg-[#e8003e] px-8 py-4 text-base font-black uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-300"
+          >
+            Volver al inicio
+          </a>
+          <a
+            href="/horario-contacto"
+            class="inline-flex items-center justify-center border-2 border-white px-8 py-4 text-base font-black uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-300"
+          >
+            Contactar
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
