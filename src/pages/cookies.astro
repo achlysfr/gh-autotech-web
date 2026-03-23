@@ -10,107 +10,60 @@ import Footer from '../components/Footer.astro';
 >
   <Header />
 
-  <main class="flex-grow bg-white pt-[72px] md:pt-[114px]">
-    <!-- Documento de cookies con estructura de consulta rápida (definición, tipos y gestión). -->
-    <section class="py-16 md:py-24 lg:py-32">
-      <div class="site-container max-w-4xl">
-        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-black uppercase tracking-tight text-black mb-8">
-          Política de Cookies
+  <main class="flex-grow bg-black pt-20 md:pt-28">
+    <!-- Encabezado legal: foco en legibilidad y jerarquía en móvil primero. -->
+    <section class="bg-black text-white py-16 md:py-24">
+      <div class="site-container max-w-4xl text-center space-y-8">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-tight tracking-tight text-[#e8003e]">
+          <span class="block">Política</span>
+          <span class="block">de Cookies</span>
         </h1>
-        
-        <div class="prose prose-lg max-w-none text-black/80 space-y-6">
-          <p>
-            Esta Política de Cookies explica qué son las cookies, cómo GHAutotech las utiliza en su sitio web y las opciones que tiene como usuario.
-          </p>
+        <p class="text-base md:text-lg text-white/90 leading-relaxed max-w-3xl mx-auto">
+          En cumplimiento de lo establecido en el Reglamento (UE) 2016/679 (GDPR) y la Ley de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), esta web utiliza cookies propias y de terceros para mejorar la experiencia de navegación, analizar el uso del sitio y ofrecer contenidos personalizados.
+        </p>
+      </div>
+    </section>
 
-          <h2 class="text-xl font-bold text-black mt-8">1. ¿Qué son las cookies?</h2>
-          <p>
-            Las cookies son pequeños archivos de texto que se almacenan en su dispositivo (ordenador, tablet o móvil) cuando visita un sitio web. Las cookies ayudan a los sitios web a recordar sus preferencias y proporcionarle una mejor experiencia de usuario.
+    <!-- Cuerpo de política en fondo claro, con lectura cómoda y estructura por bloques. -->
+    <section class="bg-white py-16 md:py-20">
+      <div class="site-container max-w-5xl px-2 sm:px-4 text-black/90 space-y-12">
+        <section class="space-y-5 text-center max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#e8003e]">¿Qué son las cookies?</h2>
+          <p class="text-base md:text-lg leading-relaxed">
+            Las cookies son archivos de texto que se descargan en su dispositivo al acceder a determinadas páginas web. Permiten almacenar y recuperar información sobre la navegación del usuario, con el fin de mejorar su experiencia en el sitio.
           </p>
+        </section>
 
-          <h2 class="text-xl font-bold text-black mt-8">2. Tipos de cookies que utilizamos</h2>
-          <p>
-            Nuestro sitio web puede utilizar los siguientes tipos de cookies:
+        <section class="space-y-5 max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#e8003e] text-center">Tipos de cookies utilizadas</h2>
+          <ol class="list-decimal pl-6 space-y-2 text-base md:text-lg">
+            <li><strong>Cookies estrictamente necesarias:</strong> necesarias para el correcto funcionamiento del sitio.</li>
+            <li><strong>Cookies de rendimiento o analítica:</strong> recogen información sobre cómo usan los usuarios la web (por ejemplo, páginas visitadas).</li>
+            <li><strong>Cookies de funcionalidad:</strong> permiten recordar preferencias del usuario.</li>
+            <li><strong>Cookies de publicidad o marketing:</strong> usadas por terceros para mostrar anuncios relacionados con sus hábitos de navegación.</li>
+          </ol>
+          <p class="text-base md:text-lg leading-relaxed">
+            Estas cookies pueden ser propias o de terceros (por ejemplo, servicios de analítica como Google Analytics).
           </p>
+        </section>
 
-          <h3 class="text-lg font-bold text-black mt-6">Cookies esenciales</h3>
-          <p>
-            Estas cookies son necesarias para que el sitio web funcione correctamente. Permiten funciones básicas como la navegación por las páginas y el acceso a áreas seguras del sitio.
+        <section class="space-y-5 max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#e8003e] text-center">Consentimiento y gestión de cookies</h2>
+          <p class="text-base md:text-lg leading-relaxed">
+            Al continuar navegando por la web, aceptas el uso de las cookies descritas en esta política. Puedes configurar o rechazar las cookies en cualquier momento desde las opciones de tu navegador web:
           </p>
-
-          <h3 class="text-lg font-bold text-black mt-6">Cookies de Google Fonts</h3>
-          <p>
-            Utilizamos Google Fonts para cargar fuentes tipográficas. Google puede establecer cookies para personalizar la experiencia de usuario. Puede consultar la política de privacidad de Google en: <a href="https://policies.google.com/privacy" class="text-[#e8003e] hover:underline" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a>
-          </p>
-
-          <h3 class="text-lg font-bold text-black mt-6">Cookies de terceros</h3>
-          <p>
-            Nuestro sitio puede incluir enlaces a redes sociales o servicios de terceros. Cuando hace clic en estos enlaces, puede permitir que terceros recopilen datos sobre usted. No tenemos control sobre estas cookies de terceros.
-          </p>
-
-          <h2 class="text-xl font-bold text-black mt-8">3. Cookies específicas utilizadas</h2>
-          <div class="overflow-x-auto">
-            <table class="w-full text-left border-collapse my-6">
-              <thead>
-                <tr class="border-b-2 border-black/20">
-                  <th class="py-3 font-bold">Nombre</th>
-                  <th class="py-3 font-bold">Proveedor</th>
-                  <th class="py-3 font-bold">Finalidad</th>
-                  <th class="py-3 font-bold">Duración</th>
-                </tr>
-              </thead>
-              <tbody class="text-black/70">
-                <tr class="border-b border-black/10">
-                  <td class="py-3">_ga</td>
-                  <td class="py-3">Google</td>
-                  <td class="py-3">Google Analytics - Distingue usuarios</td>
-                  <td class="py-3">2 años</td>
-                </tr>
-                <tr class="border-b border-black/10">
-                  <td class="py-3">_gid</td>
-                  <td class="py-3">Google</td>
-                  <td class="py-3">Google Analytics - Distingue usuarios</td>
-                  <td class="py-3">24 horas</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h2 class="text-xl font-bold text-black mt-8">4. Gestión de cookies</h2>
-          <p>
-            Puede controlar y/o eliminar las cookies según desee. Puede eliminar todas las cookies que ya estén en su dispositivo y puede configurar la mayoría de los navegadores para evitar que se incluyan.
-          </p>
-          <p>
-            Si elimina las cookies, tenga en cuenta que podría perder algunas funcionalidades del sitio web.
-          </p>
-
-          <h3 class="text-lg font-bold text-black mt-6">Configuración del navegador</h3>
-          <p>Puede gestionar las cookies desde la configuración de su navegador:</p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li><a href="https://support.google.com/chrome/answer/95647" class="text-[#e8003e] hover:underline" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
-            <li><a href="https://support.mozilla.org/es/kb/cookies-informacion-que-los-sitios-web-guardan-en-#w_configurar-las-cookies" class="text-[#e8003e] hover:underline" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
-            <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" class="text-[#e8003e] hover:underline" target="_blank" rel="noopener noreferrer">Safari</a></li>
-            <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" class="text-[#e8003e] hover:underline" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+          <ul class="list-disc pl-6 space-y-2 text-base md:text-lg break-words">
+            <li><strong>Chrome:</strong> <a href="https://support.google.com/chrome/answer/95647" class="text-black underline hover:text-[#e8003e]" target="_blank" rel="noopener noreferrer">https://support.google.com/chrome/answer/95647</a></li>
+            <li><strong>Firefox:</strong> <a href="https://support.mozilla.org/es/kb/Borrar%20cookies" class="text-black underline hover:text-[#e8003e]" target="_blank" rel="noopener noreferrer">https://support.mozilla.org/es/kb/Borrar%20cookies</a></li>
+            <li><strong>Microsoft Edge:</strong> <a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" class="text-black underline hover:text-[#e8003e]" target="_blank" rel="noopener noreferrer">https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09</a></li>
+            <li><strong>Internet Explorer:</strong> <a href="http://windows.microsoft.com/es-xl/internet-explorer/delete-manage-cookies#ie=ie11" class="text-black underline hover:text-[#e8003e]" target="_blank" rel="noopener noreferrer">http://windows.microsoft.com/es-xl/internet-explorer/delete-manage-cookies#ie=ie11</a></li>
+            <li><strong>Safari:</strong> <a href="https://support.apple.com/kb/PH19214?locale=es_ES" class="text-black underline hover:text-[#e8003e]" target="_blank" rel="noopener noreferrer">https://support.apple.com/kb/PH19214?locale=es_ES</a></li>
+            <li><strong>Opera:</strong> <a href="https://www.opera.com/es-419/learn/tutorials/security/privacy/" class="text-black underline hover:text-[#e8003e]" target="_blank" rel="noopener noreferrer">https://www.opera.com/es-419/learn/tutorials/security/privacy/</a></li>
           </ul>
-
-          <h2 class="text-xl font-bold text-black mt-8">5. Cambios en esta política</h2>
-          <p>
-            Podemos actualizar esta Política de Cookies periódicamente. Cualquier cambio será publicado en esta página.
+          <p class="text-base md:text-lg leading-relaxed">
+            La desactivación de ciertas cookies puede afectar el correcto funcionamiento de algunas secciones del sitio.
           </p>
-
-          <h2 class="text-xl font-bold text-black mt-8">6. Contacto</h2>
-          <p>
-            Si tiene preguntas sobre nuestra Política de Cookies, puede contactarnos en:
-          </p>
-          <p>
-            Email: administracion@ghautotech.com<br />
-            Teléfono: +34 630 473 852
-          </p>
-
-          <p class="mt-12 text-sm text-black/60">
-            Última actualización: Marzo 2026
-          </p>
-        </div>
+        </section>
       </div>
     </section>
   </main>

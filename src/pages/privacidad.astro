@@ -10,89 +10,73 @@ import Footer from '../components/Footer.astro';
 >
   <Header />
 
-  <main class="flex-grow bg-white pt-[72px] md:pt-[114px]">
-    <!-- Política de privacidad orientada a formularios: detalla flujo y no persistencia de datos. -->
-    <section class="py-16 md:py-24 lg:py-32">
-      <div class="site-container max-w-4xl">
-        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-black uppercase tracking-tight text-black mb-8">
-          Política de Privacidad
+  <main class="flex-grow bg-black pt-20 md:pt-28">
+    <!-- Encabezado de la política en bloque oscuro para mantener consistencia visual. -->
+    <section class="bg-black text-white py-16 md:py-24">
+      <div class="site-container max-w-4xl text-center space-y-8">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-tight tracking-tight text-[#e8003e]">
+          <span class="block">Política</span>
+          <span class="block">de Privacidad</span>
         </h1>
-        
-        <div class="prose prose-lg max-w-none text-black/80 space-y-6">
-          <p>
-            En GHAutotech nos comprometemos a garantizar la privacidad de los usuarios que visiten nuestro sitio web. A continuación, le informamos sobre cómo tratamos sus datos personales.
-          </p>
+        <p class="text-base md:text-lg text-white/90 leading-relaxed max-w-4xl mx-auto">
+          En cumplimiento del RGPD y la Ley Orgánica 3/2018 (LOPDGDD), se informa al usuario sobre la política de protección de datos personales recogidos a través de este sitio web.
+        </p>
+      </div>
+    </section>
 
-          <h2 class="text-xl font-bold text-black mt-8">1. Responsable del tratamiento</h2>
-          <p>
-            <strong>GHAutotech</strong><br />
-            AV. de la Generalitat, 43F<br />
-            43480 Vila-Seca (Tarragona)<br />
-            Email: administracion@ghautotech.com<br />
-            Teléfono: +34 630 473 852
+    <!-- Cuerpo legal en fondo claro, con secciones centradas y lectura fluida en móvil. -->
+    <section class="bg-white py-16 md:py-20">
+      <div class="site-container max-w-5xl px-2 sm:px-4 text-black/90 space-y-12">
+        <section class="space-y-5 text-center max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#e8003e]">Responsable del tratamiento</h2>
+          <p class="text-base md:text-lg leading-relaxed">
+            GH Autotech 24 SL, con dirección en Avenida de la Generalitat, 43, 43480 Vila Seca (Tarragona), España, es la responsable del tratamiento de los datos personales que facilite.
           </p>
+        </section>
 
-          <h2 class="text-xl font-bold text-black mt-8">2. Datos que recopilamos</h2>
-          <p>Los datos personales que podemos recopilar incluyen:</p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Nombre y apellidos</li>
-            <li>Dirección de correo electrónico</li>
-            <li>Número de teléfono</li>
-            <li>Mensaje o consulta que nos envíe</li>
+        <section class="space-y-5 max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#e8003e] text-center">Finalidad del tratamiento</h2>
+          <p class="text-base md:text-lg leading-relaxed">
+            Los datos se recogen con las siguientes finalidades:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-base md:text-lg">
+            <li>Gestión de consultas recibidas por formulario o correo.</li>
+            <li>Envío de información comercial o newsletters si se ha dado consentimiento.</li>
+            <li>Mejora de la experiencia y análisis del uso de la web (mediante cookies y herramientas de analítica).</li>
           </ul>
-          <p>
-            Estos datos se recopilan únicamente a través del formulario de contacto del sitio web y se utilizan exclusivamente para responder a sus consultas.
-          </p>
+        </section>
 
-          <h2 class="text-xl font-bold text-black mt-8">3. Finalidad del tratamiento</h2>
-          <p>Utilizamos sus datos personales con las siguientes finalidades:</p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Responder a sus consultas y solicitudes de información</li>
-            <li>Gestionar citas y reservas de servicios</li>
-            <li>Comunicarnos con usted sobre nuestros servicios</li>
+        <section class="space-y-5 max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#e8003e] text-center">Legitimación</h2>
+          <p class="text-base md:text-lg leading-relaxed">
+            La base legal para el tratamiento de tus datos es:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-base md:text-lg">
+            <li>El consentimiento explícito del usuario.</li>
+            <li>El cumplimiento de obligaciones legales aplicables.</li>
           </ul>
+        </section>
 
-          <h2 class="text-xl font-bold text-black mt-8">4. No almacenamiento de datos</h2>
-          <p>
-            <strong>Importante:</strong> Los datos enviados a través de nuestro formulario de contacto se envían directamente a nuestro correo electrónico y <strong>no se almacenan</strong> en ningún servidor web ni base de datos. Los datos solo se utilizan para el envío del mensaje y la respuesta correspondiente.
+        <section class="space-y-5 text-center max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#e8003e]">Destinatarios</h2>
+          <p class="text-base md:text-lg leading-relaxed">
+            Los datos no se cederán a terceros salvo obligación legal o cuando sea necesario para cumplir con la finalidad indicada (p. ej., servicios de alojamiento o proveedores de servicios de analítica).
           </p>
+        </section>
 
-          <h2 class="text-xl font-bold text-black mt-8">5. Cesión de datos a terceros</h2>
-          <p>
-            GHAutotech no cede sus datos personales a terceros, excepto cuando sea necesario para cumplir con las obligaciones legales aplicables.
+        <section class="space-y-5 text-center max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#e8003e]">Derechos ARCO/GDPR</h2>
+          <p class="text-base md:text-lg leading-relaxed">
+            Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad enviando una solicitud a nuestro correo electrónico de contacto.
           </p>
+        </section>
 
-          <h2 class="text-xl font-bold text-black mt-8">6. Sus derechos</h2>
-          <p>Usted tiene derecho a:</p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Acceder a sus datos personales</li>
-            <li>Rectificar datos inexactos</li>
-            <li>Suprimir sus datos</li>
-            <li>Oponerse al tratamiento de sus datos</li>
-            <li>Portabilidad de sus datos</li>
-          </ul>
-          <p>
-            Para ejercer cualquiera de estos derechos, puede contactarnos a través de nuestro correo electrónico o teléfono.
+        <section class="space-y-5 text-center max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#e8003e]">Conservación de datos</h2>
+          <p class="text-base md:text-lg leading-relaxed">
+            Los datos personales se conservarán el tiempo necesario para cumplir con la finalidad para la que se recabaron y según los plazos legales aplicables.
           </p>
-
-          <h2 class="text-xl font-bold text-black mt-8">7. Medidas de seguridad</h2>
-          <p>
-            GHAutotech ha adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad de sus datos personales y evitar su alteración, pérdida, tratamiento o acceso no autorizado.
-          </p>
-
-          <h2 class="text-xl font-bold text-black mt-8">8. Contacto</h2>
-          <p>
-            Si tiene cualquier pregunta sobre nuestra política de privacidad, puede contactarnos en:
-          </p>
-          <p>
-            Email: administracion@ghautotech.com<br />
-            Teléfono: +34 630 473 852
-          </p>
-
-          <p class="mt-12 text-sm text-black/60">
-            Última actualización: Marzo 2026
-          </p>
-        </div>
+        </section>
       </div>
     </section>
   </main>

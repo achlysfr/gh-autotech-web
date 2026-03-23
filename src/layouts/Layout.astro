@@ -85,7 +85,7 @@ const breadcrumbSchema = {
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth bg-black">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -95,8 +95,10 @@ const breadcrumbSchema = {
 		<meta name="geo.region" content="ES-T" />
 		<meta name="geo.placename" content="Vila-seca" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
-		<link rel="apple-touch-icon" href="/assets/icons/ui/apple-touch-icon.png" />
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+		<link rel="icon" href="/favicon_gh.svg" type="image/svg+xml" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		{canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
 		<title>{title} | GHAutotech</title>
@@ -125,7 +127,7 @@ const breadcrumbSchema = {
 		<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 		{canonicalUrl && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 	</head>
-	<body class="bg-white text-black antialiased selection:bg-[#e8003e] selection:text-white flex flex-col min-h-screen">
+	<body class="bg-black text-black antialiased selection:bg-[#e8003e] selection:text-white flex flex-col min-h-screen">
 		<slot />
 
 		<script>
