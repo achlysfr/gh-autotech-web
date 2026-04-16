@@ -63,11 +63,11 @@ import Footer from '../components/Footer.astro';
       <div class="site-container">
         <div class="max-w-6xl mx-auto flex flex-col lg:flex-row justify-center gap-10 lg:gap-16">
           <div class="w-full lg:flex-1 lg:text-right">
-            <h2 class="text-right text-[clamp(1.75rem,4vw,2.1875rem)] leading-none tracking-tight text-black font-normal">
+            <h2 class="lg:text-right text-[clamp(1.75rem,4vw,2.1875rem)] leading-none tracking-tight text-black font-normal">
               GHAutotech es un <span class="font-bold">taller mecánico profesional</span> ubicado en Vila-seca (Tarragona), especializado en el mantenimiento, reparación y mejora de todo tipo de vehículos.
             </h2>
 
-            <p class="mt-6 text-right text-[clamp(0.875rem,2.2vw,1rem)] leading-snug text-black/90 max-w-prose ml-auto">
+            <p class="mt-6 lg:text-right text-[clamp(0.875rem,2.2vw,1rem)] leading-snug text-black/90 max-w-prose lg:ml-auto">
               Nuestro compromiso es ofrecer servicio técnico automotriz de calidad, combinando experiencia, conocimiento técnico y atención cercana para que cada cliente salga satisfecho. Nos esforzamos por ser tu primer taller de confianza, tanto para revisiones rutinarias como para intervenciones más exigentes.
             </p>
           </div>
@@ -174,11 +174,11 @@ import Footer from '../components/Footer.astro';
       <div class="site-container">
         <div class="max-w-6xl mx-auto">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div class="relative w-full overflow-hidden bg-black/5 aspect-square">
+            <div class="relative w-full overflow-hidden bg-black/5 aspect-[4/3] sm:aspect-square">
               <img
                 src="/assets/images/sobre-nosotros/Foto_owner.png"
                 alt="Fran, responsable de GHAutotech"
-                class="absolute inset-0 w-full h-full object-cover object-center"
+                class="absolute inset-0 w-full h-full object-cover object-top"
                 loading="lazy"
                 decoding="async"
               />
@@ -186,7 +186,7 @@ import Footer from '../components/Footer.astro';
 
             <div class="flex flex-col">
               <h2 class="text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.0] tracking-tight text-black font-extrabold uppercase">
-                ¿Quién pone <br />
+                ¿Quién pone <br class="hidden sm:block" />
                 en movimiento GHAutotech?
               </h2>
 
@@ -204,7 +204,7 @@ import Footer from '../components/Footer.astro';
                 </p>
               </div>
 
-              <div class="mt-8 sm:mt-10">
+              <div class="mt-8 sm:mt-10 text-center lg:text-left">
                 <a
                   href="/horario-contacto"
                   class="inline-flex items-center justify-center bg-[#e8003e] px-8 py-4 sm:px-10 sm:py-5 text-base sm:text-lg font-black uppercase tracking-widest text-white hover:bg-black transition-all duration-300"
@@ -220,7 +220,7 @@ import Footer from '../components/Footer.astro';
 
     <!-- Cierre narrativo con cita y fotografía contextual. -->
     <section class="w-full bg-black">
-      <div class="relative w-full aspect-[171/86] overflow-hidden">
+      <div class="relative w-full aspect-[171/86] min-h-[360px] sm:min-h-[440px] overflow-hidden">
         <img
           src="/assets/images/sobre-nosotros/imagen_Fran.png"
           alt="Fran, gerente de GHAutotech"
@@ -234,17 +234,15 @@ import Footer from '../components/Footer.astro';
         <div class="absolute inset-0">
           <div class="site-container h-full flex items-center">
             <div class="max-w-xl text-white font-sans pl-4 sm:pl-8 md:pl-12 lg:pl-20 xl:pl-24">
-              <p class="text-[clamp(1.25rem,3.2vw,2.5rem)] leading-tight font-normal">
-                “Cada vehículo <br />
-                que entra en nuestro taller es tratado <br />
-                como si fuera propio. <br /><br />
-                La confianza de nuestros clientes es nuestro <br />
-                mayor motor.”
+              <p class=”text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight font-normal”>
+                “Cada vehículo que entra en nuestro taller es tratado como si fuera propio.
+                <br /><br />
+                La confianza de nuestros clientes es nuestro mayor motor.”
               </p>
 
               <div class="mt-10">
                 <p class="font-extrabold uppercase tracking-wide text-[clamp(1rem,2.2vw,1.25rem)]">
-                  Fran Garcia Toquero
+                  Fran Gracia Toquero
                 </p>
                 <p class="mt-1 inline-block font-extrabold uppercase text-sm tracking-widest border-b-2 border-white/70">
                   Gerente de GHAutotech
