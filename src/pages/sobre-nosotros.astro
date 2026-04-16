@@ -12,50 +12,48 @@ import Footer from '../components/Footer.astro';
 
   <main class="flex-grow bg-black pt-[72px] md:pt-[114px]">
     <!-- Hero Section -->
-    <section 
-      class="relative w-full aspect-[167/80] min-h-[340px] flex items-center pt-16 md:pt-24 lg:pt-28 overflow-hidden bg-[#0000000D]"
+    <section
+      class="relative w-full aspect-[167/80] max-h-[55svh] sm:max-h-[62svh] lg:max-h-[72svh] min-h-[280px] flex items-center pt-16 md:pt-24 lg:pt-28 overflow-hidden bg-[#0000000D]"
     >
-      <!-- Background Image with Figma-specific settings -->
       <div class="absolute inset-0">
-        <img 
-          src="/assets/images/sobre-nosotros/imagen-portada.jpg" 
-          alt="Taller mecánico GHAutotech" 
-          class="w-full h-full object-cover object-center [transform:scaleX(-1)_scale(1.05)]"
+        <img
+          src="/assets/images/sobre-nosotros/imagen-portada.jpg"
+          alt="Taller mecánico GHAutotech"
+          class="w-full h-full object-cover [object-position:center_25%] [transform:scaleX(-1)_scale(1.05)]"
         />
-        <!-- Subtle Figma Overlay (5% black) -->
         <div class="absolute inset-0 bg-black/5"></div>
       </div>
 
-      <div class="site-container relative z-10 w-full">
-        <div class="max-w-[1000px]">
-          <h1 class="text-[clamp(1.75rem,5vw,2.5rem)] font-extrabold text-white leading-normal tracking-[-0.06em] uppercase mb-4 sm:mb-8">
-            Reparamos tu coche, <br class="hidden sm:block" />
-            protegemos tu confianza
-          </h1>
-          
-          <div class="flex gap-4 sm:gap-6 items-start">
-            <div class="w-1.5 sm:w-2 h-full bg-[#e8003e] self-stretch mt-1.5 sm:mt-2 rounded-full hidden min-[400px]:block"></div>
-            <p class="text-[clamp(1rem,3vw,1.375rem)] text-white leading-normal font-medium max-w-[720px]">
-              En GHAutotech cuidamos cada vehículo como si fuera nuestro. Con experiencia en mecánica, electricidad y electrónica del automóvil, combinamos tecnología avanzada y trato cercano para que cada cliente se sienta seguro, respaldado y valorado.
-            </p>
-          </div>
+      <div class="site-container relative z-10 w-full mt-[5vh]">
+          <div class="max-w-[1000px]">
+            <h1 class="text-[clamp(1.75rem,5vw,2.5rem)] font-extrabold text-white leading-normal tracking-[-0.06em] uppercase mb-4 sm:mb-8">
+              Reparamos tu coche, <br class="hidden sm:block" />
+              protegemos tu confianza
+            </h1>
 
-          <!-- Navigation Arrow -->
-          <div class="mt-10 sm:mt-14 md:mt-20 pl-6 sm:pl-8">
-            <a 
-              href="#sobre-nosotros-descripcion" 
-              class="inline-block hover:translate-y-2 transition-transform duration-300"
-              aria-label="Explorar más"
-            >
-              <img 
-                src="/assets/images/sobre-nosotros/ARROW.svg" 
-                alt="Explorar más" 
-                class="w-[40px] md:w-[60px] h-auto"
-              />
-            </a>
+            <div class="flex gap-4 sm:gap-6 items-start">
+              <div class="w-1.5 sm:w-2 h-full bg-[#e8003e] self-stretch mt-1.5 sm:mt-2 rounded-full hidden min-[400px]:block"></div>
+              <p class="text-[clamp(1rem,3vw,1.375rem)] text-white leading-normal font-medium max-w-[720px]">
+                En GHAutotech cuidamos cada vehículo como si fuera nuestro. Con experiencia en mecánica, electricidad y electrónica del automóvil, combinamos tecnología avanzada y trato cercano para que cada cliente se sienta seguro, respaldado y valorado.
+              </p>
+            </div>
+
+            <!-- Navigation Arrow -->
+            <div class="mt-10 sm:mt-14 md:mt-20 pl-6 sm:pl-8">
+              <a
+                href="#sobre-nosotros-descripcion"
+                class="inline-block hover:translate-y-2 transition-transform duration-300"
+                aria-label="Explorar más"
+              >
+                <img
+                  src="/assets/images/sobre-nosotros/ARROW.svg"
+                  alt="Explorar más"
+                  class="w-[40px] md:w-[60px] h-auto"
+                />
+              </a>
+            </div>
           </div>
         </div>
-      </div>
     </section>
 
     <!-- Sobre nosotros: descripción -->
@@ -73,7 +71,7 @@ import Footer from '../components/Footer.astro';
           </div>
 
           <div class="w-full lg:flex-1">
-            <p class="text-[clamp(1.5rem,4.5vw,2.5rem)] font-extrabold leading-tight tracking-tight text-black max-w-2xl">
+            <p class="text-[clamp(1.75rem,4.5vw,2.75rem)] font-extrabold leading-tight tracking-tight text-black max-w-2xl">
               Cada coche que entra en GHAutotech recibe una <span class="text-[#e8003e]">atención detallada</span>, diagnósticos precisos y servicios que priorizan tu seguridad y la de tu vehículo.
             </p>
           </div>
@@ -93,7 +91,7 @@ import Footer from '../components/Footer.astro';
     <!-- Collage visual del taller: mantiene ritmo editorial entre bloques de texto largos. -->
     <section class="bg-white pb-14 sm:pb-16 md:pb-24">
       <div class="site-container">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 lg:grid-rows-2 gap-3 sm:gap-4 lg:aspect-[16/9] lg:items-stretch">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 lg:grid-rows-2 gap-3 sm:gap-4 lg:aspect-[16/9] xl:aspect-[20/9] 2xl:aspect-[24/9] lg:items-stretch">
           <!-- Fila 1 (4 columnas en desktop) -->
           <div class="relative w-full overflow-hidden bg-black/5 aspect-[113/85] lg:col-span-3 lg:aspect-auto lg:h-full">
             <img
@@ -220,7 +218,7 @@ import Footer from '../components/Footer.astro';
 
     <!-- Cierre narrativo con cita y fotografía contextual. -->
     <section class="w-full bg-black">
-      <div class="relative w-full aspect-[171/86] min-h-[360px] sm:min-h-[440px] overflow-hidden">
+      <div class="relative w-full aspect-[171/86] xl:aspect-[9/4] 2xl:aspect-[5/2] min-h-[360px] sm:min-h-[440px] overflow-hidden">
         <img
           src="/assets/images/sobre-nosotros/imagen_Fran.png"
           alt="Fran, gerente de GHAutotech"
@@ -234,10 +232,10 @@ import Footer from '../components/Footer.astro';
         <div class="absolute inset-0">
           <div class="site-container h-full flex items-center">
             <div class="max-w-xl text-white font-sans pl-4 sm:pl-8 md:pl-12 lg:pl-20 xl:pl-24">
-              <p class=”text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight font-normal”>
-                “Cada vehículo que entra en nuestro taller es tratado como si fuera propio.
+              <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight font-normal">
+                "Cada vehículo que entra en nuestro taller es tratado como si fuera propio.
                 <br /><br />
-                La confianza de nuestros clientes es nuestro mayor motor.”
+                La confianza de nuestros clientes es nuestro mayor motor."
               </p>
 
               <div class="mt-10">

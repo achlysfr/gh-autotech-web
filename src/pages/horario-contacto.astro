@@ -12,23 +12,23 @@ import Footer from '../components/Footer.astro';
 
   <main class="flex-grow pt-[72px] md:pt-[114px]">
     <!-- Bloque principal: mapa y datos clave de contacto/horario. -->
-    <section class="bg-white min-h-[calc(100svh-72px)] md:min-h-[calc(100svh-114px)] flex items-center">
+    <section class="bg-white min-h-[calc(100svh-72px)] md:min-h-[calc(100svh-114px)] xl:min-h-[calc(85svh-114px)] flex items-center py-12 md:py-16 lg:py-20">
       <div class="site-container">
         <h1 class="sr-only">Horario y Contacto de GHAutotech - Taller Mecánico en Vila-seca</h1>
-        
+
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           <div class="flex justify-center">
             <img
               src="/assets/images/maps/map-catalonia.svg"
               alt="Mapa de Cataluña"
-              class="w-full max-w-[420px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[680px] h-auto object-contain"
+              class="w-full max-w-[380px] sm:max-w-[480px] md:max-w-[560px] lg:max-w-[640px] h-auto object-contain"
               loading="lazy"
               decoding="async"
             />
           </div>
 
-          <div class="flex flex-col justify-center space-y-10 text-black">
+          <div class="flex flex-col justify-center space-y-8 md:space-y-10 text-black">
 
             <div class="flex gap-5">
               <img
@@ -43,18 +43,18 @@ import Footer from '../components/Footer.astro';
               <div class="flex flex-col sm:flex-row gap-8 sm:gap-14">
 
                 <div class="leading-tight">
-                  <p class="font-black uppercase text-2xl md:text-3xl tracking-tight mb-1">
+                  <p class="font-black uppercase text-lg md:text-2xl lg:text-3xl tracking-tight mb-1">
                     Lunes-Jueves
                   </p>
-                  <p class="text-xl md:text-2xl font-bold">9:00H - 13:00H</p>
-                  <p class="text-xl md:text-2xl font-bold">15:00H - 19:00H</p>
+                  <p class="text-base md:text-xl lg:text-2xl font-bold">9:00H - 13:00H</p>
+                  <p class="text-base md:text-xl lg:text-2xl font-bold">15:00H - 19:00H</p>
                 </div>
 
                 <div class="leading-tight">
-                  <p class="font-black uppercase text-2xl md:text-3xl tracking-tight mb-1">
+                  <p class="font-black uppercase text-lg md:text-2xl lg:text-3xl tracking-tight mb-1">
                     Viernes
                   </p>
-                  <p class="text-xl md:text-2xl font-bold">8:00H - 14:00H</p>
+                  <p class="text-base md:text-xl lg:text-2xl font-bold">8:00H - 14:00H</p>
                 </div>
 
               </div>
@@ -69,7 +69,7 @@ import Footer from '../components/Footer.astro';
                 loading="lazy"
                 decoding="async"
               />
-              <p class="text-xl md:text-2xl font-bold break-all">
+              <p class="text-base md:text-xl lg:text-2xl font-bold break-all">
                 administracion@ghautotech.com
               </p>
             </div>
@@ -134,7 +134,7 @@ import Footer from '../components/Footer.astro';
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
           <div class="text-white">
-            <h2 class="font-sans text-[clamp(2.25rem,5vw,4.0625rem)] leading-[1] tracking-[-0.045em] font-normal max-w-[560px]">
+            <h2 class="font-sans text-[clamp(1.75rem,5vw,4.0625rem)] leading-[1.05] tracking-[-0.045em] font-normal max-w-[560px]">
               ¿Necesitas revisar<br class="hidden sm:block" />
               tu vehículo o solicitar<br class="hidden sm:block" />
               <span class="font-bold">información</span>
