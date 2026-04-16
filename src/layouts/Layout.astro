@@ -4,10 +4,9 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description?: string;
-	noindex?: boolean;
 }
 
-const { title, description = "Taller mecánico profesional en Vila-seca, Tarragona. Te guiamos para tomar decisiones seguras sobre tu vehículo.", noindex = false } = Astro.props;
+const { title, description = "Taller mecánico profesional en Vila-seca, Tarragona. Te guiamos para tomar decisiones seguras sobre tu vehículo." } = Astro.props;
 // Canonical absoluto para evitar contenido duplicado entre rutas con/sin trailing slash.
 const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
 const siteUrl = Astro.site ? Astro.site.toString() : undefined;
@@ -54,23 +53,10 @@ const localBusinessSchema = {
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": "Friday",
-      "opens": "08:00",
+      "opens": "09:00",
       "closes": "14:00"
     }
   ],
-  "hasMap": "https://maps.google.com/?q=GHAutotech,+AV.+de+la+Generalitat+43F,+43480+Vila-Seca,+Tarragona",
-  "areaServed": [
-    { "@type": "City", "name": "Vila-Seca" },
-    { "@type": "City", "name": "Tarragona" },
-    { "@type": "City", "name": "Salou" },
-    { "@type": "City", "name": "Cambrils" }
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+34-630-473-852",
-    "contactType": "customer service",
-    "availableLanguage": "Spanish"
-  },
   "sameAs": [
     "https://www.instagram.com/ghautotech/",
     "https://www.facebook.com/ghautotech/"
@@ -103,7 +89,7 @@ const breadcrumbSchema = {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
-		<meta name="robots" content={noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large"} />
+		<meta name="robots" content="index,follow,max-image-preview:large" />
 		<meta name="author" content="GHAutotech" />
 		<meta name="keywords" content="taller mecánico Vila-seca, reparación coches Tarragona, mantenimiento vehículos, diagnóstico averías, ITV pre-revisión, mecánica electricidad electrónica, taller multimarca Vila-Seca, reparacion coche Costa Daurada" />
 		<meta name="geo.region" content="ES-T" />
