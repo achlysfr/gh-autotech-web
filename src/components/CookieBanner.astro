@@ -107,13 +107,7 @@
 
     document.getElementById('accept-cookies').addEventListener('click', function () {
       localStorage.setItem('cookie_consent', 'accepted');
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', {
-          'analytics_storage': 'granted',
-          'ad_storage': 'granted'
-        });
-      }
-      banner.remove();
+      window.location.reload();
     });
 
     document.getElementById('reject-cookies').addEventListener('click', function () {
