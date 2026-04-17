@@ -4,10 +4,53 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import ContactForm from '../components/ContactForm.astro';
+
+// FAQPage schema orientado a búsquedas locales. Añade rich results sin modificar
+// el contenido visual aprobado por el cliente.
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Dónde está el taller mecánico GHAutotech?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GHAutotech está en Av. de la Generalitat, 43F, 43480 Vila-seca (Tarragona). Puedes contactarnos por teléfono al +34 630 473 852 o por email a administracion@ghautotech.com."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuáles son los horarios del taller en Vila-seca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lunes a jueves: 9:00-13:00 y 15:00-19:00. Viernes: 8:00-14:00. Sábado y domingo cerrado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué servicios ofrece GHAutotech en Vila-seca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofrecemos mantenimiento integral de vehículos, diagnóstico y reparación mecánica, reparación electrónica, revisión pre-ITV, asesoramiento técnico y reparación y mejora de componentes (frenos, sistemas eléctricos, etc.)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito cita previa para ir al taller?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Recomendamos pedir cita previa para garantizar disponibilidad y reducir tiempos de espera. Puedes contactarnos por teléfono, email o a través del formulario de nuestra web."
+      }
+    }
+  ]
+};
 ---
 
+<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
 <Layout
-  title="Taller mecánico en Vila-seca (Tarragona) | Reparación de coches"
+  title="Taller mecánico en Vila-seca (Tarragona)"
   description="Taller mecánico en Vila-seca (Tarragona) especializado en reparación y mantenimiento de coches. Diagnóstico profesional, atención cercana y cita rápida en GHAutotech."
 >
   <Header />

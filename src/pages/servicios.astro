@@ -49,6 +49,88 @@ const servicios = [
   },
 ];
 
+// ItemList + Service schema para rich results de servicios en Google.
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Servicios de taller mecánico GHAutotech en Vila-seca",
+  "description": "Servicios profesionales de taller mecánico en Vila-seca (Tarragona)",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Service",
+        "name": "Mantenimiento integral de vehículos",
+        "description": "Servicios preventivos y revisiones completas para todo tipo de vehículos.",
+        "provider": { "@type": "AutoRepair", "name": "GHAutotech" },
+        "areaServed": { "@type": "City", "name": "Vila-seca, Tarragona" },
+        "serviceType": "Mantenimiento de vehículos"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Service",
+        "name": "Asesoramiento técnico profesional",
+        "description": "Orientación experta para tomar decisiones seguras sobre tu vehículo.",
+        "provider": { "@type": "AutoRepair", "name": "GHAutotech" },
+        "areaServed": { "@type": "City", "name": "Vila-seca, Tarragona" },
+        "serviceType": "Asesoramiento técnico"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Service",
+        "name": "Diagnóstico y reparación mecánica",
+        "description": "Diagnóstico preciso y solución de averías y fallos técnicos en vehículos.",
+        "provider": { "@type": "AutoRepair", "name": "GHAutotech" },
+        "areaServed": { "@type": "City", "name": "Vila-seca, Tarragona" },
+        "serviceType": "Reparación mecánica"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Service",
+        "name": "Revisión pre-ITV y ajuste técnico",
+        "description": "Preparación completa del vehículo antes de la inspección técnica oficial (ITV).",
+        "provider": { "@type": "AutoRepair", "name": "GHAutotech" },
+        "areaServed": { "@type": "City", "name": "Vila-seca, Tarragona" },
+        "serviceType": "Revisión pre-ITV"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Service",
+        "name": "Reparación electrónica y sistemas modernos",
+        "description": "Diagnóstico y reparación de sistemas electrónicos, sensores y computers de a bordo.",
+        "provider": { "@type": "AutoRepair", "name": "GHAutotech" },
+        "areaServed": { "@type": "City", "name": "Vila-seca, Tarragona" },
+        "serviceType": "Reparación electrónica"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Service",
+        "name": "Reparación y mejora de componentes",
+        "description": "Reparación y sustitución de frenos, sistemas eléctricos y otros componentes del vehículo.",
+        "provider": { "@type": "AutoRepair", "name": "GHAutotech" },
+        "areaServed": { "@type": "City", "name": "Vila-seca, Tarragona" },
+        "serviceType": "Reparación de componentes"
+      }
+    }
+  ]
+};
+
 // FAQPage para rich results en búsquedas relacionadas con servicios del taller.
 const faqSchema = {
   "@context": "https://schema.org",
@@ -98,7 +180,8 @@ const faqSchema = {
 };
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 <Layout
   title="Servicios de taller mecánico en Vila-seca"
