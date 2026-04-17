@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import CookieBanner from '../components/CookieBanner.astro';
 
 interface Props {
 	title: string;
@@ -97,6 +98,28 @@ const breadcrumbSchema = {
 <html lang="es" class="scroll-smooth bg-black">
 	<head>
 		<meta charset="UTF-8" />
+
+		<!-- Google Consent Mode v2: denegar por defecto hasta obtener consentimiento explícito (GDPR) -->
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('consent', 'default', {
+				'analytics_storage': 'denied',
+				'ad_storage': 'denied',
+				'functionality_storage': 'denied',
+				'personalization_storage': 'denied',
+				'security_storage': 'granted'
+			});
+			if (typeof localStorage !== 'undefined' && localStorage.getItem('cookie_consent') === 'accepted') {
+				gtag('consent', 'update', {
+					'analytics_storage': 'granted',
+					'ad_storage': 'granted'
+				});
+			}
+		</script>
+		<!-- Google Tag Manager -->
+		<script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WTBZ9C2K');</script>
+		<!-- End Google Tag Manager -->
 		<meta name="description" content={description} />
 		<meta name="robots" content="index,follow,max-image-preview:large" />
 		<meta name="author" content="GHAutotech" />
@@ -137,6 +160,10 @@ const breadcrumbSchema = {
 		{canonicalUrl && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 	</head>
 	<body class="bg-black text-black antialiased selection:bg-[#e8003e] selection:text-white flex flex-col min-h-screen">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTBZ9C2K"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
 		<slot />
 
 		<script>
@@ -177,5 +204,6 @@ const breadcrumbSchema = {
 				}
 			});
 		</script>
+		<CookieBanner />
 	</body>
 </html>
