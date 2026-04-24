@@ -185,6 +185,9 @@ const breadcrumbSchema = {
 									if (source?.dataset.src) {
 										source.src = source.dataset.src;
 										video.load();
+										video.addEventListener('playing', () => {
+											video.style.opacity = '1';
+										}, { once: true });
 										video.play().catch(() => {});
 									}
 									video.classList.remove('lazy-video');
@@ -203,6 +206,9 @@ const breadcrumbSchema = {
 						if (source?.dataset.src) {
 							source.src = source.dataset.src;
 							video.load();
+							video.addEventListener('playing', () => {
+								video.style.opacity = '1';
+							}, { once: true });
 							video.play().catch(() => {});
 						}
 					});

@@ -31,7 +31,6 @@
         -webkit-mask-repeat: no-repeat;
       "
     >
-      <!-- Fallback visual mientras el vídeo no está listo o si falla la reproducción. -->
       <video
         autoplay
         loop
@@ -39,7 +38,7 @@
         playsinline
         preload="none"
         class="w-full h-full object-cover lazy-video"
-        poster="/assets/images/placeholder/placeholder-coche.png"
+        style="opacity:0;transition:opacity 0.7s ease;"
       >
         <source
           data-src="/assets/videos/AdobeStock_449143556.mp4"
