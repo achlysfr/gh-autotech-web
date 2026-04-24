@@ -59,13 +59,20 @@ const localBusinessSchema = {
     }
   ],
   "alternateName": "Taller mecánico Vilaseca",
-  "hasMap": "https://www.google.com/maps/search/GHAutotech+Vila-seca",
+  "hasMap": "https://www.google.com/maps/search/GHAutotech/@41.1171,1.1442,17z",
+  "areaServed": [
+    "Vila-seca", "Salou", "La Pineda", "Tarragona", "Reus",
+    "Cambrils", "La Canonja", "Altafulla", "Torredembarra", "El Morell"
+  ],
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+34-630-473-852",
     "contactType": "customer service",
     "availableLanguage": ["Spanish", "Catalan"],
-    "areaServed": "ES-T"
+    "areaServed": [
+      "Vila-seca", "Salou", "La Pineda", "Tarragona", "Reus",
+      "Cambrils", "La Canonja", "Altafulla", "Torredembarra", "El Morell"
+    ]
   },
   "sameAs": [
     "https://www.instagram.com/ghautotech/",
@@ -154,8 +161,8 @@ const breadcrumbSchema = {
 		<meta name="twitter:image:alt" content="GHAutotech – Taller mecánico en Vila-seca (Tarragona)" />
 		<meta name="theme-color" content="#e8003e" />
 
-		<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
-		{canonicalUrl && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+		{canonicalUrl && <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 	</head>
 	<body class="bg-black text-black antialiased selection:bg-[#e8003e] selection:text-white flex flex-col min-h-screen">
 		<!-- Google Tag Manager (noscript) -->
